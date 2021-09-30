@@ -7,6 +7,9 @@
 body {
     background: url(../img/background.jpg) no-repeat center fixed;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 span {
@@ -73,9 +76,52 @@ input[type="text"] {
     box-shadow: 2px 2px 5px 5px black;
 }
 
+input[type="text"]::after {
+    content: "?";
+}
+
 .input-div {
     display: flex;
     /* border: 1px solid fuchsia; */
     min-height: 30px;
     justify-content: center;
+}
+
+.btn {
+    margin: 20px auto;
+    display: flex;
+}
+
+button {
+    margin: auto;
+    width: 5.5em;
+    height: 2em;
+    background-color: #CCB364;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: baseline;
+    height: 80px;
+    margin-top: auto;
+    color: transparent;
+    border: transparent;
+    background: transparent;
+    transition-property: all;
+}
+
+footer:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(204, 179, 100, 0.15);
+    color: rgba(204, 179, 100, 0.3);
+    transition-duration: 1s;
+}
+
+footer p {
+    margin: auto;
 }
