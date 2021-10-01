@@ -17,10 +17,10 @@ span {
     font-size: 3.5em;
     font-family: 'Ephesis', cursive;
     text-shadow: 2px 5px 5px #CCB364;
+    margin-left: 1rem;
 }
 
 nav {
-    /* border: 1px solid yellow; */
     display: flex;
     width: 100%;
     align-items: center;
@@ -37,12 +37,11 @@ nav img {
 }
 
 main div p {
-    /* font-family: 'Lato', sans-serif; */
     font-family: 'Roboto Mono', monospace;
     color: #bebebe;
     text-align: center;
-    font-size: 1.4em;
-    margin-top: 0.5em;
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
 }
 
 .intro-div {
@@ -56,12 +55,12 @@ main div p {
 }
 
 .question-div p {
-    font-size: 1em;
+    font-size: 1rem;
 }
 
 input[type="text"] {
-    width: 50%;
-    min-height: 100px;
+    min-height: 70px;
+    min-width: 50%;
     margin-top: 1%;
     line-height: 40px;
     border-style: none;
@@ -70,21 +69,18 @@ input[type="text"] {
     background-color: whitesmoke;
     opacity: 0.22;
     border-radius: 40px;
-    font-size: 2em;
+    font-size: 2rem;
     font-family: 'Roboto Mono', monospace;
     color: darkred;
     box-shadow: 2px 2px 5px 5px black;
-}
-
-input[type="text"]::after {
-    content: "?";
+    justify-content: center;
 }
 
 .input-div {
     display: flex;
-    /* border: 1px solid fuchsia; */
-    min-height: 30px;
+    place-items: center;
     justify-content: center;
+    margin: 0px 0.5rem;
 }
 
 .btn {
@@ -94,8 +90,8 @@ input[type="text"]::after {
 
 button {
     margin: auto;
-    width: 5.5em;
-    height: 2em;
+    width: 5.5rem;
+    height: 2rem;
     background-color: #CCB364;
     cursor: pointer;
     border: none;
