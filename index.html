@@ -11,31 +11,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <span>Synchrophraser</span>
-        </nav>
-    </header>
+    <div class="container" id="blur">
+        <header>
+            <nav>
+                <span>Synchrophraser</span>
+            </nav>
+        </header>
 
-    <main>
-        <div class="intro-div">
-            <p>Are you stuck? Are you in doubt?</p>
-            <p>Are you waiting for a sign?</p>
-            <p>Ask your question to them:</p>
-            <p>the remarkable minds,and...</p>
-            <p>enjoy Jung's synchronicity</p>
+        <main>
+            <div class="intro-div">
+                <p>Are you stuck? Are you in doubt?</p>
+                <p>Are you waiting for a sign?</p>
+                <p>Ask your question to them:</p>
+                <p>the remarkable minds,and...</p>
+                <p>enjoy Jung's synchronicity</p>
+            </div>
+
+            <div class="question-div">
+                <p>Your question</p>
+                <div class="input-div">
+                    <input type="text" value="?" maxlength="47" autofocus>
+                </div>
+                <div class="btn">
+                    <button type="submit" id="sendButton">Send</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+        <div class="response">
+            <h2>Respuesta</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea libero odit maiores perferendis eaque, repellat enim, ipsam explicabo soluta aut eligendi harum dolorum aliquam autem?</p>
+            <a href="#" id="anotherQuestionBtn">Make another question</a>
         </div>
 
-        <div class="question-div">
-            <p>Your question</p>
-            <div class="input-div">
-                <input type="text" value="?" maxlength="47" autofocus>
-            </div>
-            <div class="btn">
-                <button type="submit">Send</button>
-            </div>
-        </div>
-    </main>
 
     <footer>
         <p>
