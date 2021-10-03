@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+/* ------------------------------ Container Section ------------------------------ */
+
 .container {
     background: url(../img/background.jpg) no-repeat center fixed;
     background-size: cover;
@@ -11,35 +13,20 @@
     flex-direction: column;
     width: 100%;
     min-height: 100vh;
+    transition: 0.9s;
 }
 
+/* Activation of blur effect */
 .container#blur.active {
     filter: blur(5px);
     pointer-events: none;
     user-select: none;
+    transition: 0.9s;
 }
 
-.response {
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    padding: 50px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
-    background: #fff;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.5s;
-}
+/* ------------------------------ Main Section ------------------------------ */
 
-.response.active {
-    top: 50%;
-    visibility: visible;
-    opacity: 1;
-    transition: 0.5s;
-}
-
+/* Header title */
 span {
     color: #E6AC44;
     font-size: 3.5em;
@@ -64,6 +51,7 @@ nav img {
     opacity: 0.7;
 }
 
+/* Main font */
 main div p {
     font-family: 'Roboto Mono', monospace;
     color: #bebebe;
@@ -73,19 +61,18 @@ main div p {
 }
 
 .intro-div {
-    /* border: 1px solid yellow; */
     margin: 8.5% 35% 0px 35%;
 }
 
 .question-div {
     margin-top: 5%;
-    /* border: 1px solid yellow; */
 }
 
 .question-div p {
     font-size: 1rem;
 }
 
+/* Input edition */
 input[type="text"] {
     min-height: 70px;
     min-width: 50%;
@@ -126,6 +113,8 @@ button {
     border-radius: 15px;
 }
 
+/* ------------------------------ Footer Section ------------------------------ */
+
 footer {
     display: flex;
     width: 100%;
@@ -148,4 +137,130 @@ footer:hover {
 
 footer p {
     margin: auto;
+}
+
+/* ------------------------------ Response Section ------------------------------ */
+
+.response {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.9s;
+    width: 100%;
+}
+
+/* Apparition of response */
+.response.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.9s;
+}
+
+.resp-question {
+    max-width: 50%;
+    margin: auto;
+    height: 5em;
+    text-align: center;
+    line-height: 5em;
+    border-radius: 10px;
+    background-color: rgba(252, 140, 140, 0.15);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Profile photo */
+.resp-photo {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin: 3em auto 1em auto;
+}
+
+.resp-photo img {
+    width: 120px;
+    height: 120px;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.resp-content-container {
+    background-color: rgba(231, 159, 52, 0.4);
+    border-radius: 10px;
+    margin: 10px auto; 
+    /* With: Atribute to change with @mediaqueries */
+    width: 60%;
+}
+
+.resp-content-top {
+    min-height: 10px;
+    display: flex;
+    position: relative;
+}
+
+/* Quotation marks */
+
+.resp-quotmark-container {
+    display: flex;
+    position: absolute;
+    right: 0.5%;
+    top: -10%;
+}
+
+.resp-content-top img, .resp-quotmarkclose img {
+    height: 3.5rem;
+    padding: 5px;
+    margin: 0 15px 0 15px;
+}
+
+.resp-quotmarkclose {
+    min-height: 4em;
+}
+
+.resp-quotmarkclose img {
+    float: right;
+    margin-top: -7px;
+    opacity: 0.7;
+}
+
+.resp-quotmarkopen {
+    opacity: 0.7;
+}
+
+.resp-favs, .resp-copy {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 10px 5px 0 5px;
+    background-image: url(../img/iconclipboard.png);
+    background-size: cover;
+    cursor: pointer;
+    margin: 17px 8px 0 0;
+}
+
+.resp-favs {
+    background-image: url(../img/iconheart.png);
+}
+
+.resp-content {
+    font-size: 5vh;
+    padding: 0px 2em;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.resp-button-div {
+    width: 100%;
+    display: flex;
+    margin: 40px 0 20px 0;
+}
+
+.resp-button {
+    min-width: 170px;
+}
+
+.resp-button a {
+    text-decoration: none;
+
 }
