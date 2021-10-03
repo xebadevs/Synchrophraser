@@ -9,7 +9,10 @@ anotherQuestionBtn.addEventListener('click', () => {
     toggle()
 })
 
+// Activate and deactivate the blur effect
 function toggle(){
     var blur = document.getElementById('blur')
     blur.classList.toggle('active')
+    var response = document.getElementById('response')
+    response.classList.toggle('active')
 }
