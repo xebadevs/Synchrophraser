@@ -64,6 +64,10 @@ main div p {
     margin: 8.5% 35% 0px 35%;
 }
 
+.intro-div p {
+    text-shadow: 2px 2px 1px black;
+}
+
 .question-div {
     margin-top: 5%;
 }
@@ -87,8 +91,8 @@ input[type="text"] {
     font-size: 2rem;
     font-family: 'Roboto Mono', monospace;
     color: darkred;
-    box-shadow: 2px 2px 5px 5px black;
     justify-content: center;
+    box-shadow: 10px 10px 15px black;
 }
 
 .input-div {
@@ -107,10 +111,17 @@ button {
     margin: auto;
     width: 5.5rem;
     height: 2rem;
-    background-color: #CCB364;
+    background-color: #b66223;
     cursor: pointer;
     border: none;
     border-radius: 15px;
+    box-shadow: 5px 5px 10px black;
+
+}
+
+button:hover {
+    background-color: #dfa241;
+    transition: 1s;
 }
 
 /* ------------------------------ Footer Section ------------------------------ */
@@ -169,6 +180,7 @@ footer p {
     border-radius: 10px;
     background-color: rgba(252, 140, 140, 0.15);
     color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Profile photo */
@@ -177,6 +189,7 @@ footer p {
     width: 120px;
     border-radius: 50%;
     margin: 3em auto 1em auto;
+    box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.9);
 }
 
 .resp-photo img {
@@ -192,6 +205,7 @@ footer p {
     margin: 10px auto; 
     /* With: Atribute to change with @mediaqueries */
     width: 60%;
+    box-shadow: 3px 3px 25px rgba(0, 0, 0, 0.8);
 }
 
 .resp-content-top {
