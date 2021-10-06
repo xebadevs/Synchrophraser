@@ -27,7 +27,7 @@
 /* ------------------------------ Main Section ------------------------------ */
 
 /* Header title */
-span {
+.title {
     color: #E6AC44;
     font-size: 3.5em;
     font-family: 'Ephesis', cursive;
@@ -58,6 +58,20 @@ main div p {
     text-align: center;
     font-size: 1.4rem;
     margin-top: 0.5rem;
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: #ccc;
+    margin-left: -0.5rem;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        background-color: transparent;
+    }
 }
 
 .intro-div {
