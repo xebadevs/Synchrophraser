@@ -1,0 +1,22 @@
+{
+	"phrases" : [
+	{
+		"id" : 1,
+		"author" : "Gandhi",
+		"photo" : "gandhi",
+		"phrase" : "Be the change that you wish to see in the world"
+	},
+	{
+		"id" : 2,
+		"author" : "Gandhi",
+		"photo" : "gandhi",
+		"phrase" : "A man is but a product of his thoughts. What he thinks he becomes"
+	},
+	{
+		"id" : 3,
+		"author" : "Gandhi",
+		"photo" : "gandhi",
+		"phrase" : "An eye for an eye only ends up making the whole world blind"
+	}
+	]
+}
