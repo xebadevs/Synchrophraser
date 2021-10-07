@@ -2,21 +2,39 @@
 	"phrases" : [
 	{
 		"id" : 1,
-		"author" : "Gandhi",
+		"author" : ""Mahatma Gandhi",
 		"photo" : "gandhi",
 		"phrase" : "Be the change that you wish to see in the world"
 	},
 	{
 		"id" : 2,
-		"author" : "Gandhi",
+		"author" : ""Mahatma Gandhi",
 		"photo" : "gandhi",
 		"phrase" : "A man is but a product of his thoughts. What he thinks he becomes"
 	},
 	{
 		"id" : 3,
-		"author" : "Gandhi",
+		"author" : "Mahatma Gandhi",
 		"photo" : "gandhi",
 		"phrase" : "An eye for an eye only ends up making the whole world blind"
+	},
+	{
+		"id" : 4,
+		"author" : "Albert Einstein",
+		"photo" : "einstein",
+		"phrase" : "All religions, arts and sciences are branches of the same tree"
+	},
+	{
+		"id" : 5,
+		"author" : "Albert Einstein",
+		"photo" : "einstein",
+		"phrase" : "The important thing is to not stop questioning. Curiosity has its own reason for existing"
+	},
+	{
+		"id" : 6,
+		"author" : "Albert Einstein",
+		"photo" : "einstein",
+		"phrase" : "Life is like riding a bicycle. To keep your balance you must keep moving"
 	}
 	]
 }
