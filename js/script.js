@@ -2,6 +2,7 @@
 
 let sendButton = document.getElementById('sendButton')
 let anotherQuestionBtn = document.getElementById('anotherQuestionBtn')
+let lastLineOn = true
 
 const lastLineArray = [
                     "enjoy Jung's synchronicity",
@@ -24,23 +25,32 @@ const lastLine = document.querySelector('.intro-last-line')
 
 // Activate and deactivate the blur effect
 function blurry(){
-    var blur = document.getElementById('blur')
-    blur.classList.toggle('active')
-    var response = document.getElementById('response')
-    response.classList.toggle('active')
+    if(lastLineOn){
+        var blur = document.getElementById('blur')
+        blur.classList.toggle('active')
+        var response = document.getElementById('response')
+        response.classList.toggle('active')
+        lastLineOn = false
+    }
+    else{
+        lastLineOn = true
+    }
 }
 
 sendButton.addEventListener('click', () => {
     blurry()
 })
 
+// Aclaration: the function executes tree times for avoid the double click on the button
 anotherQuestionBtn.addEventListener('click', () => {
+    blurry()
+    blurry()
     blurry()
 })
 
 // Typing function
 function machineType(){
-    if(charIndex < lastLineArray[linesIndex].length){
+    if(charIndex < lastLineArray[linesIndex].length && lastLineOn){
         lastLine.textContent += lastLineArray[linesIndex].charAt(charIndex)
         charIndex++
         setTimeout(machineType, typingTime)
