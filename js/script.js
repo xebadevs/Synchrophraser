@@ -41,8 +41,13 @@ sendButton.addEventListener('click', () => {
     blurry()
 })
 
-// Aclaration: the function executes tree times for avoid the double click on the button
+// Aclaration: the function 'blurry()' executes tree times because with only one demands double click,
+// and with one repetition the program fails
 anotherQuestionBtn.addEventListener('click', () => {
+    let input = document.getElementById('question-input')
+    input.focus()
+    input.value = '?'
+    input.setSelectionRange(0, 0)
     blurry()
     blurry()
     blurry()
