@@ -1,5 +1,3 @@
-{
-	"phrases" : [
 	{
 		"id" : 1,
 		"author" : ""Mahatma Gandhi",
@@ -36,5 +34,3 @@
 		"photo" : "einstein",
 		"phrase" : "Life is like riding a bicycle. To keep your balance you must keep moving"
 	}
-	]
-}

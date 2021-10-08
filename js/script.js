@@ -1,7 +1,8 @@
 // -------------------- DECLARATION OF VARIABLES AND CONSTANTS -------------------- //
 
-let sendButton = document.getElementById('sendButton')
-let anotherQuestionBtn = document.getElementById('anotherQuestionBtn')
+
+const sendButton = document.getElementById('sendButton')
+const anotherQuestionBtn = document.getElementById('anotherQuestionBtn')
 let lastLineOn = true
 
 const lastLineArray = [
@@ -20,8 +21,12 @@ let charIndex = 0
 
 const lastLine = document.querySelector('.intro-last-line')
 
+let dataFile = new XMLHttpRequest()
+let dataArray = []
+
 
 // -------------------- FUNCTIONS -------------------- //
+
 
 // Activate and deactivate the blur effect
 function blurry(){
@@ -81,7 +86,19 @@ function deleteLines(){
     }
 }
 
+// XHR function
+dataFile.open('GET', '../data/data.txt')
+dataFile.addEventListener('load', function(){
+    if(dataFile.status == 200){
+        dataArray = dataFile.response
+        console.log(dataArray)
+    }
+})
+dataFile.send()
+
+
 // -------------------- EXECUTION -------------------- //
+
 
 document.addEventListener("DOMContentLoaded", function(){
     setTimeout(machineType, newLineTime + 350)
