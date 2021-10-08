@@ -11,9 +11,9 @@ const lastLineArray = [
                     "choose yourself the meaning of it"
                     ]
 
-const typingTime = 100
+const typingTime = 80
 const deleteTime = 50
-const newLineTime = 2000
+const newLineTime = 3000
 let linesIndex = 0
 let charIndex = 0
 
