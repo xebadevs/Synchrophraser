@@ -1,4 +1,4 @@
-// -------------------- DECLARATION OF VARIABLES AND CONSTANTS -------------------- //
+// ------------------------------ DECLARATION OF VARIABLES AND CONSTANTS ------------------------------ //
 
 
 const sendButton = document.getElementById('sendButton')
@@ -25,16 +25,19 @@ let charIndex = 0
 let dataFile = new XMLHttpRequest()
 let dataArray = []
 
+let totalPhrases = 0
+let synchroNumber = 0
 
-// -------------------- FUNCTIONS -------------------- //
+
+// ---------------------------------------- FUNCTIONS ---------------------------------------- //
 
 
 // Activate and deactivate the blur effect
 function blurry(){
     if(lastLineOn){
-        var blur = document.getElementById('blur')
+        let blur = document.getElementById('blur')
         blur.classList.toggle('active')
-        var response = document.getElementById('response')
+        let response = document.getElementById('response')
         response.classList.toggle('active')
         lastLineOn = false
     }
@@ -43,9 +46,11 @@ function blurry(){
     }
 }
 
+
 sendButton.addEventListener('click', () => {
     blurry()
 })
+
 
 // Aclaration: the function 'blurry()' executes tree times because with only one demands double click,
 // and with one repetition the program fails
@@ -57,8 +62,11 @@ anotherQuestionBtn.addEventListener('click', () => {
     blurry()
     blurry()
     blurry()
+    // setTimeout(function reload(){
+    //     location.reload()}, 700)
 })
-
+    
+    
 // Typing function
 function machineType(){
     if(charIndex < lastLineArray[linesIndex].length && lastLineOn){
@@ -70,7 +78,8 @@ function machineType(){
         setTimeout(deleteLines, newLineTime)
     }
 }
-
+    
+    
 // Delete function
 function deleteLines(){
     if(charIndex > 0){
@@ -86,28 +95,39 @@ function deleteLines(){
         setTimeout(machineType, typingTime + 1100)
     }
 }
-
-let synchroNumber = 5
-
+    
+    
+// Random function
+function randomNumber(param){
+    return Math.floor(Math.random() * param)
+}
+    
+    
 // XHR function
 dataFile.open('GET', '../data/data.txt', true)
 dataFile.addEventListener('load', function(){
     if(this.readyState == 4 && this.status == 200){
         dataArray = JSON.parse(dataFile.response)
+        totalPhrases = dataArray.length
+        console.log("totalPhrases is " + totalPhrases)
+        synchroNumber = randomNumber(totalPhrases)
+        
+        console.log("SynchroNumber is :" + synchroNumber)
         console.log(dataArray[synchroNumber].phrase)
-        let phraseContent = dataArray[synchroNumber].phrase
-        respContent.innerHTML = phraseContent
+        
+        respContent.innerHTML = dataArray[synchroNumber].phrase
     }
     else{
         console.log('XHR error')
-    }
+}
 })
 dataFile.send()
 
 
-// -------------------- EXECUTION -------------------- //
+// ---------------------------------------- EXECUTIONS ---------------------------------------- //
 
 
 document.addEventListener("DOMContentLoaded", function(){
     setTimeout(machineType, newLineTime + 350)
-})      
+})
+
