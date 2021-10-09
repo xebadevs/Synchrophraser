@@ -34,5 +34,23 @@
 		"author" : "Albert Einstein",
 		"photo" : "einstein",
 		"phrase" : "Life is like riding a bicycle. To keep your balance you must keep moving"
+	},
+	{
+		"id" : 6,
+		"author" : "Confucius",
+		"photo" : "confucius",
+		"phrase" : "I hear and I forget. I see and I remember. I do and I understand"
+	},
+	{
+		"id" : 7,
+		"author" : "Confucius",
+		"photo" : "confucius",
+		"phrase" : "Our greatest glory is not in never falling, but in rising every time we fall"
+	},
+	{
+		"id" : 8,
+		"author" : "Confucius",
+		"photo" : "confucius",
+		"phrase" : "It does not matter how slowly you go as long as you do not stop"
 	}
 ]
