@@ -3,7 +3,10 @@
 
 const sendButton = document.getElementById('sendButton')
 const anotherQuestionBtn = document.getElementById('anotherQuestionBtn')
+const respContent = document.getElementById('respContent')
+const lastLine = document.querySelector('.intro-last-line')
 let lastLineOn = true
+let arrayProof = []
 
 const lastLineArray = [
                     "enjoy Jung's synchronicity",
@@ -18,8 +21,6 @@ const deleteTime = 50
 const newLineTime = 3000
 let linesIndex = 0
 let charIndex = 0
-
-const lastLine = document.querySelector('.intro-last-line')
 
 let dataFile = new XMLHttpRequest()
 let dataArray = []
@@ -86,12 +87,19 @@ function deleteLines(){
     }
 }
 
+let synchroNumber = 5
+
 // XHR function
-dataFile.open('GET', '../data/data.txt')
+dataFile.open('GET', '../data/data.txt', true)
 dataFile.addEventListener('load', function(){
-    if(dataFile.status == 200){
-        dataArray = dataFile.response
-        console.log(dataArray)
+    if(this.readyState == 4 && this.status == 200){
+        dataArray = JSON.parse(dataFile.response)
+        console.log(dataArray[synchroNumber].phrase)
+        let phraseContent = dataArray[synchroNumber].phrase
+        respContent.innerHTML = phraseContent
+    }
+    else{
+        console.log('XHR error')
     }
 })
 dataFile.send()
