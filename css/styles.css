@@ -16,6 +16,7 @@
     transition: 0.9s;
 }
 
+
 /* Activation of blur effect */
 .container#blur.active {
     filter: blur(5px);
@@ -50,6 +51,7 @@ nav img {
     padding: 15px;
     opacity: 0.7;
 }
+
 
 /* Main font */
 main div p {
@@ -89,6 +91,7 @@ main div p {
 .question-div p {
     font-size: 1rem;
 }
+
 
 /* Input edition */
 input[type="text"] {
@@ -177,6 +180,7 @@ footer p {
     width: 100%;
 }
 
+
 /* Apparition of response */
 .response.active {
     top: 50%;
@@ -196,6 +200,13 @@ footer p {
     color: rgba(255, 255, 255, 0.7);
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.5);
 }
+
+.resp-question p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
 
 /* Profile photo */
 .resp-photo {
@@ -229,7 +240,6 @@ footer p {
 }
 
 /* Quotation marks */
-
 .resp-quotmark-container {
     display: flex;
     position: absolute;
@@ -257,6 +267,7 @@ footer p {
     opacity: 0.7;
 }
 
+/* Icons */
 .resp-favs, .resp-copy {
     height: 1.5rem;
     width: 1.5rem;
@@ -284,6 +295,8 @@ footer p {
     margin: 40px 0 20px 0;
 }
 
+
+/* Button */
 .resp-button {
     min-width: 170px;
 }

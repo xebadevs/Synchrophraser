@@ -5,8 +5,12 @@ const sendButton = document.getElementById('sendButton')
 const anotherQuestionBtn = document.getElementById('anotherQuestionBtn')
 const respContent = document.getElementById('respContent')
 const lastLine = document.querySelector('.intro-last-line')
+const userQuestion = document.getElementById('question-input')
+const respQuestion = document.getElementById('resp-question')
+
 let lastLineOn = true
 let arrayProof = []
+let userQuestionValue = document.getElementById('resp-question').value
 
 const lastLineArray = [
                     "enjoy Jung's synchronicity",
@@ -49,6 +53,7 @@ function blurry(){
 
 sendButton.addEventListener('click', () => {
     blurry()
+    showUserQuestion()
     createResponse()
 })
 
@@ -63,8 +68,6 @@ anotherQuestionBtn.addEventListener('click', () => {
     blurry()
     blurry()
     blurry()
-    // setTimeout(function reload(){
-    //     location.reload()}, 700)
 })
     
     
@@ -97,6 +100,12 @@ function deleteLines(){
     }
 }
     
+
+// Show user question
+function showUserQuestion(){
+    respQuestion.innerHTML = userQuestion.value
+}
+
     
 // Random function
 function randomNumber(param){
@@ -133,4 +142,3 @@ function createResponse(){
 document.addEventListener("DOMContentLoaded", function(){
     setTimeout(machineType, newLineTime + 350)
 })
-
