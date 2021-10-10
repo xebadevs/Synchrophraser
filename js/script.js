@@ -49,6 +49,7 @@ function blurry(){
 
 sendButton.addEventListener('click', () => {
     blurry()
+    createResponse()
 })
 
 
@@ -104,24 +105,26 @@ function randomNumber(param){
     
     
 // XHR function
-dataFile.open('GET', '../data/data.txt', true)
-dataFile.addEventListener('load', function(){
-    if(this.readyState == 4 && this.status == 200){
-        dataArray = JSON.parse(dataFile.response)
-        totalPhrases = dataArray.length
-        console.log("totalPhrases is " + totalPhrases)
-        synchroNumber = randomNumber(totalPhrases)
-        
-        console.log("SynchroNumber is :" + synchroNumber)
-        console.log(dataArray[synchroNumber].phrase)
-        
-        respContent.innerHTML = dataArray[synchroNumber].phrase
-    }
-    else{
-        console.log('XHR error')
+function createResponse(){
+    dataFile.open('GET', '../data/data.txt', true)
+    dataFile.addEventListener('load', function(){
+        if(this.readyState == 4 && this.status == 200){
+            dataArray = JSON.parse(dataFile.response)
+            totalPhrases = dataArray.length
+            console.log("totalPhrases is " + totalPhrases)
+            synchroNumber = randomNumber(totalPhrases)
+            
+            console.log("SynchroNumber is :" + synchroNumber)
+            console.log(dataArray[synchroNumber].phrase)
+            
+            respContent.innerHTML = dataArray[synchroNumber].phrase
+        }
+        else{
+            console.log('XHR error')
+        }
+    })
+    dataFile.send()
 }
-})
-dataFile.send()
 
 
 // ---------------------------------------- EXECUTIONS ---------------------------------------- //
