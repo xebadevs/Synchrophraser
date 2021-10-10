@@ -97,19 +97,23 @@ main div p {
 input[type="text"] {
     min-height: 70px;
     min-width: 50%;
-    margin-top: 1%;
+    margin-top: 1em;
     line-height: 40px;
     border-style: none;
     outline: 0;
     text-align: center;
-    background-color: whitesmoke;
-    opacity: 0.22;
-    border-radius: 40px;
+    background-color: rgba(250,130,0,0.3);
+    background: rgba(255, 145, 55, 0.3);
+    border-radius: 20px;
     font-size: 2rem;
     font-family: 'Roboto Mono', monospace;
-    color: darkred;
+    color: rgb(0, 0, 0);
+    text-shadow: 2px 2px 1px rgb(73, 38, 6);
     justify-content: center;
-    box-shadow: 10px 10px 15px black;
+    /* box-shadow: 5px 1px 5px 1px orange,
+                5px 10px 55px 1px black; */
+    box-shadow: 5px 5px 22px 1px black,
+                inset 2px 2px 2px 2px rgba(255, 255, 255, 0.1);                ;
 }
 
 .input-div {
@@ -125,19 +129,23 @@ input[type="text"] {
 }
 
 button {
-    margin: auto;
+    margin: 3em auto;
     width: 5.5rem;
     height: 2rem;
-    background-color: #b66223;
+    background: #b66223;
     cursor: pointer;
     border: none;
     border-radius: 15px;
     box-shadow: 5px 5px 10px black;
-
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    opacity: 0.8;
 }
 
 button:hover {
-    background-color: #dfa241;
+    background: #dfa241;
     transition: 1s;
 }
 
@@ -190,11 +198,11 @@ footer p {
 }
 
 .resp-question {
-    max-width: 50%;
+    max-width: 40rem;
     margin: auto;
-    height: 5em;
+    height: 5rem;
     text-align: center;
-    line-height: 5em;
+    line-height: 5rem;
     border-radius: 10px;
     background-color: rgba(252, 140, 140, 0.15);
     color: rgba(255, 255, 255, 0.7);
@@ -303,5 +311,5 @@ footer p {
 
 .resp-button a {
     text-decoration: none;
-
+    color: black;
 }

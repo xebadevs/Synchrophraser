@@ -7,6 +7,7 @@ const respContent = document.getElementById('respContent')
 const lastLine = document.querySelector('.intro-last-line')
 const userQuestion = document.getElementById('question-input')
 const respQuestion = document.getElementById('resp-question')
+const respContainer = document.getElementById('response')
 
 let lastLineOn = true
 let arrayProof = []
@@ -51,6 +52,7 @@ function blurry(){
 }
 
 
+// Send button listener
 sendButton.addEventListener('click', () => {
     blurry()
     showUserQuestion()
@@ -71,6 +73,14 @@ anotherQuestionBtn.addEventListener('click', () => {
 })
     
     
+// 
+respContent.addEventListener('keyup', function(event){
+    if(event.code === 'Enter' ){
+        alert('ke ase')
+    }    
+})
+
+
 // Typing function
 function machineType(){
     if(charIndex < lastLineArray[linesIndex].length && lastLineOn){
@@ -120,11 +130,11 @@ function createResponse(){
         if(this.readyState == 4 && this.status == 200){
             dataArray = JSON.parse(dataFile.response)
             totalPhrases = dataArray.length
-            console.log("totalPhrases is " + totalPhrases)
+            console.log("totalPhrases is: " + totalPhrases)
             synchroNumber = randomNumber(totalPhrases)
             
-            console.log("SynchroNumber is :" + synchroNumber)
-            console.log(dataArray[synchroNumber].phrase)
+            console.log("SynchroNumber is: " + synchroNumber)
+            console.log("Phrase is: " + dataArray[synchroNumber].phrase)
             
             respContent.innerHTML = dataArray[synchroNumber].phrase
         }
