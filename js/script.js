@@ -10,6 +10,7 @@ const respQuestion = document.getElementById('resp-question')
 const respContainer = document.getElementById('response')
 
 let lastLineOn = true
+let responseModal = false
 let arrayProof = []
 let userQuestionValue = document.getElementById('resp-question').value
 
@@ -36,19 +37,11 @@ let synchroNumber = 0
 
 // ---------------------------------------- FUNCTIONS ---------------------------------------- //
 
-// Enter key event
-userQuestion.addEventListener('keyup', e => {
-    if(e.code === 'Enter'){
-        console.log(e)
-        sendButton.click()
-    }
-})
 
 anotherQuestionBtn.addEventListener('keyup', e => {
     if(e.code === 'Enter'){
         console.log(e)
         anotherQuestionBtn.click()
-
     }
 })
 
@@ -74,13 +67,13 @@ sendButton.addEventListener('click', () => {
         showUserQuestion()
         createResponse()
         let input = (userQuestion.value = '?')
+        sendButton.disabled = true
 })
 
 
 // Aclaration: the function 'blurry()' executes tree times because with only one demands double click,
 // and with one repetition the program fails
 anotherQuestionBtn.addEventListener('click', () => {
-        sendButton.disabled = true
         let input = document.getElementById('question-input')
         input.focus()
         input.value = '?'
@@ -88,6 +81,7 @@ anotherQuestionBtn.addEventListener('click', () => {
         blurry()
         blurry()
         blurry()
+        sendButton.disabled = false
 })
 
 
@@ -162,3 +156,5 @@ function createResponse(){
 document.addEventListener("DOMContentLoaded", function(){
     setTimeout(machineType, newLineTime + 350)
 })
+
+console.log(responseModal)
