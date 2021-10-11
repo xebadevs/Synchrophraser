@@ -36,6 +36,22 @@ let synchroNumber = 0
 
 // ---------------------------------------- FUNCTIONS ---------------------------------------- //
 
+// Enter key event
+userQuestion.addEventListener('keyup', e => {
+    if(e.code === 'Enter'){
+        console.log(e)
+        sendButton.click()
+    }
+})
+
+anotherQuestionBtn.addEventListener('keyup', e => {
+    if(e.code === 'Enter'){
+        console.log(e)
+        anotherQuestionBtn.click()
+
+    }
+})
+
 
 // Activate and deactivate the blur effect
 function blurry(){
@@ -54,30 +70,24 @@ function blurry(){
 
 // Send button listener
 sendButton.addEventListener('click', () => {
-    blurry()
-    showUserQuestion()
-    createResponse()
+        blurry()
+        showUserQuestion()
+        createResponse()
+        let input = (userQuestion.value = '?')
 })
 
 
 // Aclaration: the function 'blurry()' executes tree times because with only one demands double click,
 // and with one repetition the program fails
 anotherQuestionBtn.addEventListener('click', () => {
-    let input = document.getElementById('question-input')
-    input.focus()
-    input.value = '?'
-    input.setSelectionRange(0, 0)
-    blurry()
-    blurry()
-    blurry()
-})
-    
-    
-// 
-respContent.addEventListener('keyup', function(event){
-    if(event.code === 'Enter' ){
-        alert('ke ase')
-    }    
+        sendButton.disabled = true
+        let input = document.getElementById('question-input')
+        input.focus()
+        input.value = '?'
+        input.setSelectionRange(0, 0)
+        blurry()
+        blurry()
+        blurry()
 })
 
 
