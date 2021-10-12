@@ -11,7 +11,6 @@ const respContainer = document.getElementById('response')
 const copyToClipboardBtn = document.getElementById('resp-copy')
 
 let lastLineOn = true
-let arrayProof = []
 let userQuestionValue = document.getElementById('resp-question').value
 
 const lastLineArray = [
@@ -33,6 +32,7 @@ let dataArray = []
 
 let totalPhrases = 0
 let synchroNumber = 0
+let currentPhrase = ''
 
 
 // ---------------------------------------- FUNCTIONS ---------------------------------------- //
@@ -139,6 +139,7 @@ function createResponse(){
             
             console.log("SynchroNumber is: " + synchroNumber)
             console.log("Phrase is: " + dataArray[synchroNumber].phrase)
+            currentPhrase = dataArray[synchroNumber].phrase
             
             respContent.innerHTML = dataArray[synchroNumber].phrase
         }
@@ -150,10 +151,28 @@ function createResponse(){
 }
 
 
-// Copy to clipboard
-copyToClipboardBtn.addEventListener('click', function() {
-    alert('algo')
-})
+// Copy to clipboard listener
+copyToClipboardBtn.addEventListener('click', copyToClipboard, false)
+
+
+// Copy to clipboard function: DEPRECATED ONE!
+// function copyToClipboard(){
+//         const textarea = document.createElement('textarea')
+//         textarea.setAttribute('readonly', '')
+//         textarea.style.position = 'absolute'
+//         textarea.value = currentPhrase
+//         document.body.appendChild(textarea)
+//         textarea.select()
+//         document.execCommand('copy')
+//         textarea.hidden =  true
+//     }
+
+
+// Copy to clipboard function with Clipboard API
+function copyToClipboard(){
+    navigator.clipboard.writeText(currentPhrase)
+}
+
 
 // ---------------------------------------- EXECUTIONS ---------------------------------------- //
 
