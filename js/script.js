@@ -33,9 +33,6 @@ let charIndex = 0
 let dataFile = new XMLHttpRequest()
 let dataArray = []
 let profilePhoto = new Image()
-profilePhoto.src = './img/profiles/' + currentPhoto + '.jpg'
-profilePhoto.id = 'profilePhoto'
-profilePhoto.alt = 'profile photo'
 
 let totalPhrases = 0
 let synchroNumber = 0
@@ -128,6 +125,15 @@ function showUserQuestion(){
     respQuestion.innerHTML = userQuestion.value
 }
 
+
+// Create profile photo function
+function createProfilePhoto(){
+    profilePhoto.src = './img/profiles/' + currentPhoto + '.jpg'
+    profilePhoto.id = 'profilePhoto'
+    profilePhoto.alt = 'profile photo'
+    respPhotoCont.appendChild(profilePhoto)
+}
+
     
 // Random function
 function randomNumber(param){
@@ -151,6 +157,7 @@ function createResponse(){
             currentPhrase = dataArray[synchroNumber].phrase
             currentPhoto = dataArray[synchroNumber].photo
             respContent.innerHTML = dataArray[synchroNumber].phrase
+            createProfilePhoto()
         }
         else{
             console.log('XHR error')
