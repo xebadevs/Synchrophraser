@@ -8,9 +8,9 @@ const lastLine = document.querySelector('.intro-last-line')
 const userQuestion = document.getElementById('question-input')
 const respQuestion = document.getElementById('resp-question')
 const respContainer = document.getElementById('response')
+const copyToClipboardBtn = document.getElementById('resp-copy')
 
 let lastLineOn = true
-let responseModal = false
 let arrayProof = []
 let userQuestionValue = document.getElementById('resp-question').value
 
@@ -37,7 +37,7 @@ let synchroNumber = 0
 
 // ---------------------------------------- FUNCTIONS ---------------------------------------- //
 
-
+// Another question button or Return button
 anotherQuestionBtn.addEventListener('keyup', e => {
     if(e.code === 'Enter'){
         console.log(e)
@@ -150,11 +150,14 @@ function createResponse(){
 }
 
 
+// Copy to clipboard
+copyToClipboardBtn.addEventListener('click', function() {
+    alert('algo')
+})
+
 // ---------------------------------------- EXECUTIONS ---------------------------------------- //
 
 
 document.addEventListener("DOMContentLoaded", function(){
     setTimeout(machineType, newLineTime + 350)
 })
-
-console.log(responseModal)

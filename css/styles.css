@@ -286,6 +286,11 @@ footer p {
     margin: 17px 8px 0 0;
 }
 
+.resp-copy:hover, .resp-favs:hover {
+    height: 1.7rem;
+    width: 1.7rem;
+}
+
 .resp-favs {
     background-image: url(../img/iconheart.png);
 }
