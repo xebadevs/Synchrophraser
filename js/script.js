@@ -9,6 +9,8 @@ const userQuestion = document.getElementById('question-input')
 const respQuestion = document.getElementById('resp-question')
 const respContainer = document.getElementById('response')
 const copyToClipboardBtn = document.getElementById('resp-copy')
+const addToFavoritesBtn = document.getElementById('resp-favs')
+const respIcon = document.getElementById('resp-icon')
 
 let lastLineOn = true
 let userQuestionValue = document.getElementById('resp-question').value
@@ -171,6 +173,25 @@ copyToClipboardBtn.addEventListener('click', copyToClipboard, false)
 // Copy to clipboard function with Clipboard API
 function copyToClipboard(){
     navigator.clipboard.writeText(currentPhrase)
+    respIcon.innerHTML = 'Copied!'
+    setTimeout(deleteRespIconValue, 2000)
+}
+
+
+// Add to favorites listener
+addToFavoritesBtn.addEventListener('click', addToFavorites, false)
+
+
+// Add to Favorites function
+function addToFavorites(){
+    respIcon.innerText = 'Added!'
+    setTimeout(deleteRespIconValue, 2000)
+}
+
+
+// Delete respIcon value
+function deleteRespIconValue(){
+    respIcon.innerHTML = ''
 }
 
 

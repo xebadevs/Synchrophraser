@@ -308,6 +308,11 @@ footer p {
     margin: 40px 0 20px 0;
 }
 
+.resp-icon p {
+    height: 1.5rem;
+    margin: 20px 8px 0 0;
+    font-weight: bold;
+}
 
 /* Button */
 .resp-button {
