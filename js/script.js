@@ -11,6 +11,7 @@ const respContainer = document.getElementById('response')
 const copyToClipboardBtn = document.getElementById('resp-copy')
 const addToFavoritesBtn = document.getElementById('resp-favs')
 const respIcon = document.getElementById('resp-icon')
+const respPhotoCont = document.getElementById('resp-photo-cont')
 
 let lastLineOn = true
 let userQuestionValue = document.getElementById('resp-question').value
@@ -31,10 +32,15 @@ let charIndex = 0
 
 let dataFile = new XMLHttpRequest()
 let dataArray = []
+let profilePhoto = new Image()
+profilePhoto.src = './img/profiles/' + currentPhoto + '.jpg'
+profilePhoto.id = 'profilePhoto'
+profilePhoto.alt = 'profile photo'
 
 let totalPhrases = 0
 let synchroNumber = 0
 let currentPhrase = ''
+let currentPhoto = ''
 
 
 // ---------------------------------------- FUNCTIONS ---------------------------------------- //
@@ -141,8 +147,9 @@ function createResponse(){
             
             console.log("SynchroNumber is: " + synchroNumber)
             console.log("Phrase is: " + dataArray[synchroNumber].phrase)
-            currentPhrase = dataArray[synchroNumber].phrase
             
+            currentPhrase = dataArray[synchroNumber].phrase
+            currentPhoto = dataArray[synchroNumber].photo
             respContent.innerHTML = dataArray[synchroNumber].phrase
         }
         else{
