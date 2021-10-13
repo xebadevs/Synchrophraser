@@ -323,3 +323,36 @@ footer p {
     text-decoration: none;
     color: black;
 }
+
+/* ------------------------------ Favorites Section ------------------------------ */
+
+.cont-favs {
+    border: 1px solid yellow;
+    min-width: 70%;
+    min-height: 500px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    border-radius: 10px;
+    /* visibility: hidden; */
+}
+
+.cont-favs.active {
+    visibility: visible;
+    top: 50%;
+    opacity: 1;
+    transition: 0.9s;
+}
+
+.cont-favs h1 {
+    color: yellow;
+    text-align: center;
+    margin: 2rem 0px;
+}
+
+.cont-favs p {
+    text-align: center;
+    color: orange;
+}
