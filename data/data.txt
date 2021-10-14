@@ -52,5 +52,41 @@
 		"author" : "Confucius",
 		"photo" : "confucius",
 		"phrase" : "It does not matter how slowly you go as long as you do not stop"
+	},
+	{
+		"id" : 9,
+		"author" : "Bertrand Russell",
+		"photo" : "russell",
+		"phrase" : "To be without some of the things you want is an indispensable part of happiness"
+	},
+	{
+		"id" : 10,
+		"author" : "Bertrand Russell",
+		"photo" : "russell",
+		"phrase" : "The only thing that will redeem mankind is cooperation"
+	},
+	{
+		"id" : 11,
+		"author" : "Bertrand Russell",
+		"photo" : "russell",
+		"phrase" : "To conquer fear is the beginning of wisdom"
+	},
+	{
+		"id" : 12,
+		"author" : "Bruce Lee",
+		"photo" : "lee",
+		"phrase" : "The possession of anything begins in the mind"
+	},
+	{
+		"id" : 13,
+		"author" : "Bruce Lee",
+		"photo" : "lee",
+		"phrase" : "To hell with circumstances; I create opportunities"
+	},
+	{
+		"id" : 14,
+		"author" : "Bruce Lee",
+		"photo" : "lee",
+		"phrase" : "Knowing is not enough, we must apply. Willing is not enough, we must do"
 	}
 ]
