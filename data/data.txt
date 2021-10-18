@@ -94,5 +94,17 @@
 "autor" : "Plato",
 "photo" : "plato",
 "phrase" : "the measure of a man is what he does with power"
+},
+{
+"id" : 16,
+"author" : "Plato",
+"photo" : "plato",
+"phrase" : "Those who tells the stories rule society"
+},
+{
+"id" : 17,
+"author" : "Plato",
+"photo" : "plato",
+"phrase" : "The beginning is the most important part of the work"
 }
 ]
