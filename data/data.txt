@@ -88,5 +88,11 @@
 		"author" : "Bruce Lee",
 		"photo" : "lee",
 		"phrase" : "Knowing is not enough, we must apply. Willing is not enough, we must do"
-	}
+	},
+{
+"id" : 15,
+"autor" : "Plato",
+"photo" : "plato",
+"phrase" : "the measure of a man is what he does with power"
+}
 ]
