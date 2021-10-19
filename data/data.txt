@@ -88,5 +88,41 @@
 		"author" : "Bruce Lee",
 		"photo" : "lee",
 		"phrase" : "Knowing is not enough, we must apply. Willing is not enough, we must do"
+	},
+	{
+		"id" : 15,
+		"autor" : "Plato",
+		"photo" : "plato",
+		"phrase" : "the measure of a man is what he does with power"
+	},
+	{
+		"id" : 16,
+		"author" : "Plato",
+		"photo" : "plato",
+		"phrase" : "Those who tells the stories rule society"
+	},
+	{
+		"id" : 17,
+		"author" : "Plato",
+		"photo" : "plato",
+		"phrase" : "The beginning is the most important part of the work"
+	},
+		{
+		"id" : 18,
+		"author" : "Aristotle",
+		"photo" : "aristotle",
+		"phrase" : "It is the mark of an educated mind to be able to entertain a thought without accepting it"
+	},
+			{
+		"id" : 19,
+		"author" : "Aristotle",
+		"photo" : "aristotle",
+		"phrase" : "The energy of the mind is the essence of life"
+	},
+			{
+		"id" : 20,
+		"author" : "Aristotle",
+		"photo" : "aristotle",
+		"phrase" : "The one exclusive sign of thorough knowledge is the power of teaching"
 	}
 ]
