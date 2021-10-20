@@ -12,6 +12,7 @@ const copyToClipboardBtn = document.getElementById('resp-copy')
 const addToFavoritesBtn = document.getElementById('resp-favs')
 const respIcon = document.getElementById('resp-icon')
 const respPhotoCont = document.getElementById('resp-photo-cont')
+const favs = document.getElementById('nav-favs')
 
 let lastLineOn = true
 let userQuestionValue = document.getElementById('resp-question').value
@@ -64,6 +65,20 @@ function blurry(){
         lastLineOn = true
     }
 }
+
+
+// Blurry from My favourites
+function favsBlurry(){
+    let blur = document.getElementById('blur')
+    blur.classList.toggle('active')
+    let contFavs = document.getElementById('cont-favs')
+    contFavs.classList.toggle('active')
+    sendButton.disabled = true
+}
+
+
+// My favourites Listener
+favs.addEventListener('click', favsBlurry)
 
 
 // Send button listener

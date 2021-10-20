@@ -36,8 +36,20 @@
     margin-left: 1rem;
 }
 
+.nav-favs {
+    color: #CCB364;
+    text-decoration: none;
+    text-align: right;
+    margin-right: 1rem;
+}
+
+.nav-favs:hover {
+    color: #dfa241;
+}
+
 nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
     width: 100%;
     align-items: center;
     justify-content: baseline;
@@ -336,7 +348,7 @@ footer p {
     transform: translate(-50%, -50%);
     background-color: black;
     border-radius: 10px;
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
 .cont-favs.active {
