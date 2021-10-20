@@ -47,6 +47,10 @@
     color: #dfa241;
 }
 
+.favs-p {
+    color: white;
+}
+
 nav {
     display: grid;
     grid-template-columns: auto auto;

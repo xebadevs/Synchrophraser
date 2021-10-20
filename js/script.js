@@ -12,7 +12,8 @@ const copyToClipboardBtn = document.getElementById('resp-copy')
 const addToFavoritesBtn = document.getElementById('resp-favs')
 const respIcon = document.getElementById('resp-icon')
 const respPhotoCont = document.getElementById('resp-photo-cont')
-const favs = document.getElementById('nav-favs')
+const navFavs = document.getElementById('nav-favs')
+const contFavs = document.getElementById('cont-favs')
 
 let lastLineOn = true
 let userQuestionValue = document.getElementById('resp-question').value
@@ -39,6 +40,16 @@ let totalPhrases = 0
 let synchroNumber = 0
 let currentPhrase = ''
 let currentPhoto = ''
+let currentAuthor = ''
+
+const favTemplate = (author, phrase) => {
+    return(`
+        <p class="favs-p"> <b>${author}</b> ` + ` - ` + 
+        `${phrase} </p>
+        <br><br>
+    `)
+}
+
 
 
 // ---------------------------------------- FUNCTIONS ---------------------------------------- //
@@ -67,7 +78,7 @@ function blurry(){
 }
 
 
-// Blurry from My favourites
+// Blur from My favourites
 function favsBlurry(){
     let blur = document.getElementById('blur')
     blur.classList.toggle('active')
@@ -77,8 +88,16 @@ function favsBlurry(){
 }
 
 
+// Add author and phrase to My favourites function
+function addPhrase(){
+    const favPhrase = document.createElement('div')
+    favPhrase.classList.add('favs-p')
+    favPhrase.innerHTML = favTemplate(currentAuthor, currentPhrase)
+    contFavs.appendChild(favPhrase)
+}
+
 // My favourites Listener
-favs.addEventListener('click', favsBlurry)
+navFavs.addEventListener('click', favsBlurry)
 
 
 // Send button listener
@@ -171,6 +190,7 @@ function createResponse(){
             
             currentPhrase = dataArray[synchroNumber].phrase
             currentPhoto = dataArray[synchroNumber].photo
+            currentAuthor = dataArray[synchroNumber].author
             respContent.innerHTML = dataArray[synchroNumber].phrase
             createProfilePhoto()
         }
@@ -214,6 +234,7 @@ addToFavoritesBtn.addEventListener('click', addToFavorites, false)
 // Add to Favorites function
 function addToFavorites(){
     respIcon.innerText = 'Added!'
+    addPhrase()
     setTimeout(deleteRespIconValue, 2000)
 }
 
