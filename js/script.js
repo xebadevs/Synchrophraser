@@ -14,6 +14,7 @@ const respIcon = document.getElementById('resp-icon')
 const respPhotoCont = document.getElementById('resp-photo-cont')
 const navFavs = document.getElementById('nav-favs')
 const contFavs = document.getElementById('cont-favs')
+const favsP = document.getElementById('favs-p')
 
 let lastLineOn = true
 let userQuestionValue = document.getElementById('resp-question').value
@@ -44,9 +45,7 @@ let currentAuthor = ''
 
 const favTemplate = (author, phrase) => {
     return(`
-        <p class="favs-p"> <b>${author}</b> ` + ` - ` + 
-        `${phrase} </p>
-        <br><br>
+        <p class="favs-p"> <b>${author}</b> ` + ` - ` + `${phrase} </p>
     `)
 }
 
@@ -90,10 +89,10 @@ function favsBlurry(){
 
 // Add author and phrase to My favourites function
 function addPhrase(){
-    const favPhrase = document.createElement('div')
+    const favPhrase = document.createElement('p')
     favPhrase.classList.add('favs-p')
     favPhrase.innerHTML = favTemplate(currentAuthor, currentPhrase)
-    contFavs.appendChild(favPhrase)
+    favsP.appendChild(favPhrase)
 }
 
 // My favourites Listener

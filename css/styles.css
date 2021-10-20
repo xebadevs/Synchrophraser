@@ -343,15 +343,11 @@ footer p {
 /* ------------------------------ Favorites Section ------------------------------ */
 
 .cont-favs {
-    border: 1px solid yellow;
     min-width: 70%;
-    min-height: 500px;
     position: fixed;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: black;
-    border-radius: 10px;
     visibility: hidden;
 }
 
@@ -362,13 +358,40 @@ footer p {
     transition: 0.9s;
 }
 
+.favs-p {
+    border-radius: 10px;
+    min-height: 100px;
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.5);
+    border: transparent;
+}
+
+.cont-favs {
+    /* border: 1px solid pink; */
+    font-family: 'Roboto Mono', monospace;
+}
+
 .cont-favs h1 {
     color: yellow;
+    color: rgba(231, 159, 52, 0.8);
     text-align: center;
-    margin: 2rem 0px;
+    padding: 15px;
 }
 
 .cont-favs p {
     text-align: center;
-    color: orange;
+    background-color: rgba(231, 159, 52, 0.2);
+    line-height: 3rem;
+    /* color: rgba(0, 0, 0, 0.7); */
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.cont-favs button {
+    margin: auto;
+}
+
+.favs-back-btn {
+    min-height: 100px;
+    width: 100%;    
+    margin: auto;
+    display: flex;
 }
