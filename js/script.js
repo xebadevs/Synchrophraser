@@ -15,6 +15,7 @@ const respPhotoCont = document.getElementById('resp-photo-cont')
 const navFavs = document.getElementById('nav-favs')
 const contFavs = document.getElementById('cont-favs')
 const favsP = document.getElementById('favs-p')
+const favsBackBtn = document.getElementById('favs-back-btn')
 
 let lastLineOn = true
 let userQuestionValue = document.getElementById('resp-question').value
@@ -45,7 +46,7 @@ let currentAuthor = ''
 
 const favTemplate = (author, phrase) => {
     return(`
-        <p class="favs-p"> <b>${author}</b> ` + ` - ` + `${phrase} </p>
+        <p class="favs-p"> <b>${author}</b> ` + ` - ` + `${phrase}` + `.` + `</p>
     `)
 }
 
@@ -81,9 +82,21 @@ function blurry(){
 function favsBlurry(){
     let blur = document.getElementById('blur')
     blur.classList.toggle('active')
-    let contFavs = document.getElementById('cont-favs')
     contFavs.classList.toggle('active')
     sendButton.disabled = true
+    userQuestion.disabled = true
+}
+
+function favsBlurryBack(){
+    let blur = document.getElementById('blur')
+    blur.classList.toggle('active')
+    contFavs.classList.toggle('active')
+    let input = document.getElementById('question-input')
+    input.focus()
+    input.value = '?'
+    input.setSelectionRange(0, 0)
+    sendButton.disabled = false
+    userQuestion.disabled = false
 }
 
 
@@ -95,8 +108,13 @@ function addPhrase(){
     favsP.appendChild(favPhrase)
 }
 
+
 // My favourites Listener
 navFavs.addEventListener('click', favsBlurry)
+
+
+// My favourites Back Listener
+favsBackBtn.addEventListener('click', favsBlurryBack)
 
 
 // Send button listener

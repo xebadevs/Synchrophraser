@@ -360,18 +360,17 @@ footer p {
 
 .favs-p {
     border-radius: 10px;
-    min-height: 100px;
+    min-height: 20px;
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.5);
     border: transparent;
+    margin: 5px;
 }
 
 .cont-favs {
-    /* border: 1px solid pink; */
     font-family: 'Roboto Mono', monospace;
 }
 
 .cont-favs h1 {
-    color: yellow;
     color: rgba(231, 159, 52, 0.8);
     text-align: center;
     padding: 15px;
