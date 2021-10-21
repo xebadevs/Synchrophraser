@@ -88,6 +88,16 @@ function favsBlurry(){
     contFavs.classList.toggle('active')
     sendButton.disabled = true
     userQuestion.disabled = true
+
+    localStAuthors = JSON.parse(localStorage.getItem('localStAuthors'))
+    localStPhrases = JSON.parse(localStorage.getItem('localStPhrases'))
+
+    const favPhrase = document.createElement('p')
+    favPhrase.classList.add('favs-p')
+    favPhrase.innerHTML = favTemplate(localStAuthors[0], localStPhrases[0])
+    favsP.appendChild(favPhrase)
+
+    alert(localStAuthors[0])
 }
 
 function favsBlurryBack(){
