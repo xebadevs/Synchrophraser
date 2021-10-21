@@ -91,7 +91,7 @@
 	},
 	{
 		"id" : 15,
-		"autor" : "Plato",
+		"author" : "Plato",
 		"photo" : "plato",
 		"phrase" : "the measure of a man is what he does with power"
 	},

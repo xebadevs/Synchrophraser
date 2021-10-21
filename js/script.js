@@ -43,6 +43,9 @@ let synchroNumber = 0
 let currentPhrase = ''
 let currentPhoto = ''
 let currentAuthor = ''
+let localStAuthors = []
+let localStPhrases = []
+
 
 const favTemplate = (author, phrase) => {
     return(`
@@ -102,10 +105,14 @@ function favsBlurryBack(){
 
 // Add author and phrase to My favourites function
 function addPhrase(){
-    const favPhrase = document.createElement('p')
-    favPhrase.classList.add('favs-p')
-    favPhrase.innerHTML = favTemplate(currentAuthor, currentPhrase)
-    favsP.appendChild(favPhrase)
+    // const favPhrase = document.createElement('p')
+    // favPhrase.classList.add('favs-p')
+    // favPhrase.innerHTML = favTemplate(currentAuthor, currentPhrase)
+    // favsP.appendChild(favPhrase)
+    localStAuthors.push(currentAuthor)
+    localStorage.setItem('localStAuthors', JSON.stringify(localStAuthors))
+    localStPhrases.push(currentPhrase)
+    localStorage.setItem('localStPhrases', JSON.stringify(localStPhrases))
 }
 
 
