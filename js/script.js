@@ -49,7 +49,7 @@ let localStPhrases = []
 
 const favTemplate = (author, phrase) => {
     return(`
-        <p class="favs-p"> <b>${author}</b> ` + ` - ` + `${phrase}` + `.` + `</p>
+        <b>${author}</b> ` + ` - ` + `${phrase}` + `.
     `)
 }
 
@@ -97,6 +97,7 @@ function favsBlurry(){
         favPhrase.classList.add('favs-p')
         favPhrase.innerHTML = favTemplate(localStAuthors[i], localStPhrases[i])
         favsP.appendChild(favPhrase)
+        console.log(favPhrase)
     }
 }
 
