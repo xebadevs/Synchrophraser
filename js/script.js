@@ -92,12 +92,12 @@ function favsBlurry(){
     localStAuthors = JSON.parse(localStorage.getItem('localStAuthors'))
     localStPhrases = JSON.parse(localStorage.getItem('localStPhrases'))
 
-    const favPhrase = document.createElement('p')
-    favPhrase.classList.add('favs-p')
-    favPhrase.innerHTML = favTemplate(localStAuthors[0], localStPhrases[0])
-    favsP.appendChild(favPhrase)
-
-    alert(localStAuthors[0])
+    for(let i=0; i < localStAuthors.length; i++){
+        const favPhrase = document.createElement('p')
+        favPhrase.classList.add('favs-p')
+        favPhrase.innerHTML = favTemplate(localStAuthors[i], localStPhrases[i])
+        favsP.appendChild(favPhrase)
+    }
 }
 
 function favsBlurryBack(){
