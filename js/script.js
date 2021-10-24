@@ -45,7 +45,7 @@ let currentPhoto = ''
 let currentAuthor = ''
 let localStAuthors = []
 let localStPhrases = []
-
+let phrasesRender = false
 
 const favTemplate = (author, phrase) => {
     return(`
@@ -94,11 +94,16 @@ function favsBlurry(){
 
     for(let i=0; i < localStAuthors.length; i++){
         const favPhrase = document.createElement('p')
-        favPhrase.classList.add('favs-p')
-        favPhrase.innerHTML = favTemplate(localStAuthors[i], localStPhrases[i])
-        favsP.appendChild(favPhrase)
-        console.log(favPhrase)
+            favPhrase.classList.add('favs-p')
+            favPhrase.innerHTML = favTemplate(localStAuthors[i], localStPhrases[i])
+            favsP.appendChild(favPhrase)
+
+            if(phrasesRender){
+                favsP.removeChild(favPhrase)
+            }
     }
+
+    
 }
 
 function favsBlurryBack(){
@@ -106,20 +111,19 @@ function favsBlurryBack(){
     blur.classList.toggle('active')
     contFavs.classList.toggle('active')
     let input = document.getElementById('question-input')
+    
     input.focus()
     input.value = '?'
     input.setSelectionRange(0, 0)
     sendButton.disabled = false
     userQuestion.disabled = false
+
+    phrasesRender = true
 }
 
 
 // Add author and phrase to My favourites function
 function addPhrase(){
-    // const favPhrase = document.createElement('p')
-    // favPhrase.classList.add('favs-p')
-    // favPhrase.innerHTML = favTemplate(currentAuthor, currentPhrase)
-    // favsP.appendChild(favPhrase)
     localStAuthors.push(currentAuthor)
     localStorage.setItem('localStAuthors', JSON.stringify(localStAuthors))
     localStPhrases.push(currentPhrase)

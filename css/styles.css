@@ -366,6 +366,10 @@ footer p {
     margin: 5px;
 }
 
+.favs-p.active {
+    visibility: hidden;
+}
+
 .cont-favs {
     font-family: 'Roboto Mono', monospace;
 }
