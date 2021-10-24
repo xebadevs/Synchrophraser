@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Roboto mono', monospace;
+}
+
 /* ------------------------------ Container Section ------------------------------ */
 
 .container {
@@ -38,6 +42,7 @@
 
 .nav-favs {
     color: #CCB364;
+    font-size: 0.9rem;
     text-decoration: none;
     text-align: right;
     margin-right: 1rem;
@@ -48,7 +53,8 @@
 }
 
 .favs-p {
-    color: white;
+    color: whitesmoke;
+    padding: 0px 1px;
 }
 
 nav {
@@ -71,7 +77,6 @@ nav img {
 
 /* Main font */
 main div p {
-    font-family: 'Roboto Mono', monospace;
     color: #bebebe;
     text-align: center;
     font-size: 1.4rem;
@@ -122,7 +127,6 @@ input[type="text"] {
     background: rgba(255, 145, 55, 0.3);
     border-radius: 20px;
     font-size: 2rem;
-    font-family: 'Roboto Mono', monospace;
     color: rgb(0, 0, 0);
     text-shadow: 2px 2px 1px rgb(73, 38, 6);
     justify-content: center;
@@ -226,7 +230,6 @@ footer p {
 }
 
 .resp-question p {
-    font-family: 'Roboto Mono', monospace;
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.7);
 }
@@ -316,6 +319,7 @@ footer p {
     padding: 0px 2em;
     text-align: center;
     color: rgba(0, 0, 0, 0.7);
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .resp-button-div {
@@ -326,7 +330,7 @@ footer p {
 
 .resp-icon p {
     height: 1.5rem;
-    margin: 20px 8px 0 0;
+    margin: 18px 8px 0 0;
     font-weight: bold;
 }
 
@@ -361,17 +365,12 @@ footer p {
 .favs-p {
     border-radius: 10px;
     min-height: 20px;
-    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.5);
-    border: transparent;
-    margin: 5px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+    margin: 20px 1px;
 }
 
 .favs-p.active {
     visibility: hidden;
-}
-
-.cont-favs {
-    font-family: 'Roboto Mono', monospace;
 }
 
 .cont-favs h1 {
