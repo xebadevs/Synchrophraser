@@ -45,6 +45,7 @@ let currentPhoto = ''
 let currentAuthor = ''
 let localStAuthors = []
 let localStPhrases = []
+let chucrut = []
 let phrasesRender = false
 
 const favTemplate = (author, phrase) => {
@@ -128,6 +129,9 @@ function addPhrase(){
     localStorage.setItem('localStAuthors', JSON.stringify(localStAuthors))
     localStPhrases.push(currentPhrase)
     localStorage.setItem('localStPhrases', JSON.stringify(localStPhrases))
+    if(navFavs.style.visibility = 'hidden'){
+        navFavs.style.visibility = 'visible'
+    }
 }
 
 
@@ -284,9 +288,17 @@ function deleteRespIconValue(){
 }
 
 
-// ---------------------------------------- EXECUTIONS ---------------------------------------- //
+// ---------------------------------------- INITIAL EXECUTIONS ---------------------------------------- //
 
 
 document.addEventListener("DOMContentLoaded", function(){
     setTimeout(machineType, newLineTime + 350)
+
+    chucrut = JSON.parse(localStorage.getItem('localStAuthors'))
+    if(chucrut != null){
+        navFavs.style.visibility = 'visible'
+    }else{
+        navFavs.style.visibility = 'hidden'
+    }
+
 })
