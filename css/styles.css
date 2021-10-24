@@ -266,6 +266,7 @@ footer p {
     position: relative;
 }
 
+
 /* Quotation marks */
 .resp-quotmark-container {
     display: flex;
@@ -293,6 +294,7 @@ footer p {
 .resp-quotmarkopen {
     opacity: 0.7;
 }
+
 
 /* Icons */
 .resp-favs, .resp-copy {
@@ -334,6 +336,7 @@ footer p {
     font-weight: bold;
 }
 
+
 /* Button */
 .resp-button {
     min-width: 170px;
@@ -344,6 +347,7 @@ footer p {
     color: black;
 }
 
+
 /* ------------------------------ Favorites Section ------------------------------ */
 
 .cont-favs {
@@ -352,7 +356,9 @@ footer p {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+    overflow-y: auto;
     visibility: hidden;
+    max-height: 70vh;
 }
 
 .cont-favs.active {
@@ -362,6 +368,18 @@ footer p {
     transition: 0.9s;
 }
 
+
+/* Scrollbar */
+.cont-favs.active::-webkit-scrollbar {
+    width: 4px;
+}
+
+.cont-favs.active::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+
+/* Favourites phrases */
 .favs-p {
     border-radius: 10px;
     min-height: 20px;
