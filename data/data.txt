@@ -93,7 +93,7 @@
 		"id" : 15,
 		"author" : "Plato",
 		"photo" : "plato",
-		"phrase" : "the measure of a man is what he does with power"
+		"phrase" : "The measure of a man is what he does with power"
 	},
 	{
 		"id" : 16,
