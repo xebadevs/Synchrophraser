@@ -75,6 +75,27 @@ nav img {
 }
 
 
+/* Music button */
+
+.cont-music {
+    width: 100%;
+    float: right;
+}
+
+.cont-music button {
+    width: 50px;
+    margin: 20px 36px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+}
+
+.cont-music img {
+    height: 20px;
+}
+
+
 /* Main font */
 main div p {
     color: #bebebe;
@@ -98,7 +119,7 @@ main div p {
 }
 
 .intro-div {
-    margin-top: 9rem;
+    margin-top: 11rem;
 }
 
 .intro-div p {
@@ -111,6 +132,7 @@ main div p {
 
 .question-div p {
     font-size: 1rem;
+    text-shadow: 2px 2px 1px rgba(73, 38, 6);    
 }
 
 
@@ -130,8 +152,6 @@ input[type="text"] {
     color: rgb(0, 0, 0);
     text-shadow: 2px 2px 1px rgb(73, 38, 6);
     justify-content: center;
-    /* box-shadow: 5px 1px 5px 1px orange,
-                5px 10px 55px 1px black; */
     box-shadow: 5px 5px 22px 1px black,
                 inset 2px 2px 2px 2px rgba(255, 255, 255, 0.1);                ;
 }
@@ -169,6 +189,7 @@ button:hover {
     transition: 1s;
 }
 
+
 /* ------------------------------ Footer Section ------------------------------ */
 
 footer {
@@ -194,6 +215,7 @@ footer:hover {
 footer p {
     margin: auto;
 }
+
 
 /* ------------------------------ Response Section ------------------------------ */
 

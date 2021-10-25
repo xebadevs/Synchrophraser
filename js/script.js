@@ -6,6 +6,7 @@ const anotherQuestionBtn = document.getElementById('anotherQuestionBtn')
 const respContent = document.getElementById('respContent')
 const lastLine = document.querySelector('.intro-last-line')
 const userQuestion = document.getElementById('question-input')
+const musicIcon = document.getElementById('cont-music')
 const respQuestion = document.getElementById('resp-question')
 const respContainer = document.getElementById('response')
 const copyToClipboardBtn = document.getElementById('resp-copy')
@@ -17,6 +18,7 @@ const contFavs = document.getElementById('cont-favs')
 const favsP = document.getElementById('favs-p')
 const favsBackBtn = document.getElementById('favs-back-btn')
 
+let musicOn = true
 let lastLineOn = true
 let userQuestionValue = document.getElementById('resp-question').value
 
@@ -37,6 +39,7 @@ let charIndex = 0
 let dataFile = new XMLHttpRequest()
 let dataArray = []
 let profilePhoto = new Image()
+let iconImage = new Image()
 
 let totalPhrases = 0
 let synchroNumber = 0
@@ -211,6 +214,21 @@ function createProfilePhoto(){
     respPhotoCont.appendChild(profilePhoto)
 }
 
+// Create music icon function
+function createIconImage(){
+    if(musicOn){
+        iconImage.src = './img/svg-musicon.svg'
+        iconImage.id = 'music-on'
+        iconImage.alt = 'music on icon'
+        musicIcon.appendChild(iconImage)
+    }else{
+        iconImage.src = './img/svg-musicoff.svg'
+        iconImage.id = 'music-off'
+        iconImage.alt = 'music off icon'
+        musicIcon.appendChild(iconImage)
+    }
+}
+
     
 // Random function
 function randomNumber(param){
@@ -301,4 +319,5 @@ document.addEventListener("DOMContentLoaded", function(){
         navFavs.style.visibility = 'hidden'
     }
 
+    createIconImage()
 })
