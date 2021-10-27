@@ -37,7 +37,7 @@ const deleteTime = 50
 const newLineTime = 3000
 let linesIndex = 0
 let charIndex = 0
-let playlistCount = 5
+let playlistCount = 0
 
 let dataFile = new XMLHttpRequest()
 let dataArray = []
