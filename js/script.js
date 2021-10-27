@@ -17,6 +17,7 @@ const navFavs = document.getElementById('nav-favs')
 const contFavs = document.getElementById('cont-favs')
 const favsP = document.getElementById('favs-p')
 const favsBackBtn = document.getElementById('favs-back-btn')
+const contAudio = document.getElementsByTagName('audio')
 
 let musicOn = true
 let lastLineOn = true
@@ -35,6 +36,7 @@ const deleteTime = 50
 const newLineTime = 3000
 let linesIndex = 0
 let charIndex = 0
+let playlistCount = 0
 
 let dataFile = new XMLHttpRequest()
 let dataArray = []
@@ -48,7 +50,7 @@ let currentPhoto = ''
 let currentAuthor = ''
 let localStAuthors = []
 let localStPhrases = []
-let chucrut = []
+let favsActivator = []
 let phrasesRender = false
 
 const favTemplate = (author, phrase) => {
@@ -61,10 +63,36 @@ const favTemplate = (author, phrase) => {
 
 // ---------------------------------------- FUNCTIONS ---------------------------------------- //
 
+// Audio functions
+function automaticPlaylist(){
+    contAudio[playlistCount].play()
+    musicPlayer()
+}
+
+// Music player function
+function musicPlayer(){
+    setTimeout(function(){
+        if(!contAudio[playlistCount].ended){
+            musicPlayer()
+        }
+        else if(playlistCount === 5){
+            playlistCount = 0
+            automaticPlaylist()
+        }
+        else{
+            playlistCount++
+            contAudio[playlistCount].play()
+            musicPlayer()
+        }
+    }, 3000)
+
+
+}
+
+
 // Another question button or Return button
 anotherQuestionBtn.addEventListener('keyup', e => {
     if(e.code === 'Enter'){
-        console.log(e)
         anotherQuestionBtn.click()
     }
 })
@@ -243,11 +271,7 @@ function createResponse(){
         if(this.readyState == 4 && this.status == 200){
             dataArray = JSON.parse(dataFile.response)
             totalPhrases = dataArray.length
-            console.log("totalPhrases is: " + totalPhrases)
             synchroNumber = randomNumber(totalPhrases)
-            
-            console.log("SynchroNumber is: " + synchroNumber)
-            console.log("Phrase is: " + dataArray[synchroNumber].phrase)
             
             currentPhrase = dataArray[synchroNumber].phrase
             currentPhoto = dataArray[synchroNumber].photo
@@ -312,12 +336,13 @@ function deleteRespIconValue(){
 document.addEventListener("DOMContentLoaded", function(){
     setTimeout(machineType, newLineTime + 350)
 
-    chucrut = JSON.parse(localStorage.getItem('localStAuthors'))
-    if(chucrut != null){
+    favsActivator = JSON.parse(localStorage.getItem('localStAuthors'))
+    if(favsActivator != null){
         navFavs.style.visibility = 'visible'
     }else{
         navFavs.style.visibility = 'hidden'
     }
 
     createIconImage()
+    automaticPlaylist()
 })
