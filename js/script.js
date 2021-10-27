@@ -18,8 +18,9 @@ const contFavs = document.getElementById('cont-favs')
 const favsP = document.getElementById('favs-p')
 const favsBackBtn = document.getElementById('favs-back-btn')
 const contAudio = document.getElementsByTagName('audio')
+const contMusicBtn = document.getElementById('cont-music')
 
-let musicOn = true
+let musicOn = false
 let lastLineOn = true
 let userQuestionValue = document.getElementById('resp-question').value
 
@@ -36,7 +37,7 @@ const deleteTime = 50
 const newLineTime = 3000
 let linesIndex = 0
 let charIndex = 0
-let playlistCount = 0
+let playlistCount = 5
 
 let dataFile = new XMLHttpRequest()
 let dataArray = []
@@ -85,9 +86,23 @@ function musicPlayer(){
             musicPlayer()
         }
     }, 3000)
-
-
 }
+
+// Authorized Music reproduction
+function musicControl(){
+    if(musicOn === false){
+        musicOn = true
+        createIconImage()
+        automaticPlaylist()
+    }else{
+        musicOn = false
+        createIconImage()
+        contAudio[playlistCount].pause()
+    }
+}
+
+// Authorized Music reproduction listener
+contMusicBtn.addEventListener('click', musicControl)
 
 
 // Another question button or Return button
@@ -250,7 +265,7 @@ function createIconImage(){
         iconImage.alt = 'music on icon'
         musicIcon.appendChild(iconImage)
     }else{
-        iconImage.src = './img/svg-musicoff.svg'
+        iconImage.src = './img/svg-soundoff.svg'
         iconImage.id = 'music-off'
         iconImage.alt = 'music off icon'
         musicIcon.appendChild(iconImage)
@@ -344,5 +359,4 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     createIconImage()
-    automaticPlaylist()
 })
