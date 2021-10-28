@@ -55,9 +55,7 @@ let favsActivator = []
 let phrasesRender = false
 
 const favTemplate = (author, phrase) => {
-    return(`
-        <b>${author}</b> ` + ` - ` + `${phrase}` + `.
-    `)
+    return(`<b>${author}</b> ` + ` - ` + `${phrase}` + `.`)
 }
 
 
@@ -135,22 +133,21 @@ function favsBlurry(){
     contFavs.classList.toggle('active')
     sendButton.disabled = true
     userQuestion.disabled = true
+    contMusicBtn.disabled = true
 
     localStAuthors = JSON.parse(localStorage.getItem('localStAuthors'))
     localStPhrases = JSON.parse(localStorage.getItem('localStPhrases'))
 
     for(let i=0; i < localStAuthors.length; i++){
         const favPhrase = document.createElement('p')
-            favPhrase.classList.add('favs-p')
-            favPhrase.innerHTML = favTemplate(localStAuthors[i], localStPhrases[i])
-            favsP.appendChild(favPhrase)
+        favPhrase.classList.add('favs-p')
+        favPhrase.innerHTML = favTemplate(localStAuthors[i], localStPhrases[i])
+        favsP.appendChild(favPhrase)
 
-            if(phrasesRender){
-                favsP.removeChild(favPhrase)
-            }
+        if(phrasesRender){
+            favsP.removeChild(favPhrase)
+        }
     }
-
-    
 }
 
 function favsBlurryBack(){
@@ -159,13 +156,14 @@ function favsBlurryBack(){
     contFavs.classList.toggle('active')
     let input = document.getElementById('question-input')
     
+    sendButton.disabled = false
+    userQuestion.disabled = false
+    contMusicBtn.disabled = false
+    phrasesRender = true
+
     input.focus()
     input.value = '?'
     input.setSelectionRange(0, 0)
-    sendButton.disabled = false
-    userQuestion.disabled = false
-
-    phrasesRender = true
 }
 
 
