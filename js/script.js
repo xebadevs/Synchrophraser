@@ -196,6 +196,8 @@ sendButton.addEventListener('click', () => {
         createResponse()
         let input = (userQuestion.value = '?')
         sendButton.disabled = true
+        contMusicBtn.disabled = true
+        userQuestion.disabled = true
 })
 
 
@@ -210,6 +212,8 @@ anotherQuestionBtn.addEventListener('click', () => {
         blurry()
         blurry()
         sendButton.disabled = false
+        contMusicBtn.disabled = false
+        userQuestion.disabled = false
 })
 
 
