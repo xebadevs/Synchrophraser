@@ -91,6 +91,15 @@ nav img {
     float: right;
 }
 
+.cont-music button.active {
+    animation: flicker 3s infinite both;
+}
+
+@keyframes flicker {
+    0% {box-shadow: 0px 0px -5px #CCB364, 0px 0px -5px #CCB364;}
+    50% {box-shadow: 10px 0px 15px rgba(255, 255, 0, 0.6), -10px 0px 15px rgba(255, 255, 0, 0.6)}
+}
+
 .cont-music img {
     height: 20px;
 }
