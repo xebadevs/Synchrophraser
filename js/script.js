@@ -94,6 +94,7 @@ function musicControl(){
         musicOn = true
         createIconImage()
         automaticPlaylist()
+        musicIcon.classList.add('active')
     }else{
         musicOn = false
         createIconImage()
