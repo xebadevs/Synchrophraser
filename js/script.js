@@ -99,6 +99,7 @@ function musicControl(){
         musicOn = false
         createIconImage()
         contAudio[playlistCount].pause()
+        musicIcon.classList.remove('active')
     }
 }
 
