@@ -52,11 +52,6 @@ body {
     color: #dfa241;
 }
 
-.favs-p {
-    color: whitesmoke;
-    padding: 0px 1px;
-}
-
 nav {
     display: grid;
     grid-template-columns: auto auto;
@@ -414,7 +409,8 @@ footer p {
     border-radius: 10px;
     min-height: 20px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
-    margin: 0px 1px;
+    margin: 10px 1px;
+    padding: 0px 2px;
 }
 
 .favs-p.active {
@@ -566,5 +562,11 @@ footer p {
     button {
         height: 20px;
         font-size: 0.55rem;
+    }
+    .cont-favs {
+        width: 90%;
+    }
+    .cont-favs p {
+        line-height: 1.5rem;
     }
 }
