@@ -17,6 +17,7 @@ const navFavs = document.getElementById('nav-favs')
 const contFavs = document.getElementById('cont-favs')
 const favsP = document.getElementById('favs-p')
 const favsBackBtn = document.getElementById('favs-back-btn')
+const favsReloadBtn = document.getElementById('favs-reload-btn')
 const contAudio = document.getElementsByTagName('audio')
 const contMusicBtn = document.getElementById('cont-music')
 
@@ -53,11 +54,15 @@ let localStAuthors = []
 let localStPhrases = []
 let favsActivator = []
 let phrasesRender = false
+let favsEnter = false
+let likedPhrases = 0
+let param = 0
+let activatedReload = false
+
 
 const favTemplate = (author, phrase) => {
     return(`<b>${author}</b> ` + ` - ` + `${phrase}` + `.`)
 }
-
 
 
 // ---------------------------------------- FUNCTIONS ---------------------------------------- //
@@ -129,7 +134,7 @@ function blurry(){
 
 
 // Blur from My favourites
-function favsBlurry(){
+async function favsBlurry(){
     let blur = document.getElementById('blur')
     blur.classList.toggle('active')
     contFavs.classList.toggle('active')
@@ -137,6 +142,8 @@ function favsBlurry(){
     userQuestion.disabled = true
     contMusicBtn.disabled = true
 
+    musicIcon.disabled = true
+    
     localStAuthors = JSON.parse(localStorage.getItem('localStAuthors'))
     localStPhrases = JSON.parse(localStorage.getItem('localStPhrases'))
 
@@ -150,8 +157,14 @@ function favsBlurry(){
             favsP.removeChild(favPhrase)
         }
     }
+    if(!favsEnter){
+        likedPhrases = 0
+        favsEnter = true
+    }
 }
 
+
+// Back button from My favourites
 function favsBlurryBack(){
     let blur = document.getElementById('blur')
     blur.classList.toggle('active')
@@ -166,15 +179,43 @@ function favsBlurryBack(){
     input.focus()
     input.value = '?'
     input.setSelectionRange(0, 0)
+    musicIcon.disabled = false
+
+    phrasesRender = true
+    favsReloadBtn.disabled = false
+
+    if(activatedReload){
+        likedPhrases = 0
+    }
 }
 
+// Reload function
+function favsReload(){
+    param = localStAuthors.length - likedPhrases
+    for(let i = param; i < param + likedPhrases; i++){
+        const addLastPhrases = document.createElement('p')
+        addLastPhrases.classList.add('favs-p')
+        addLastPhrases.innerHTML = favTemplate(localStAuthors[i], localStPhrases[i])
+        favsP.appendChild(addLastPhrases)
+    }
+    favsReloadBtn.disabled = true
+    activatedReload = true
+}
+
+// Reload Listener
+favsReloadBtn.addEventListener('click', favsReload)
 
 // Add author and phrase to My favourites function
 function addPhrase(){
+    if(localStAuthors === null && localStPhrases === null){
+        localStAuthors = []
+        localStPhrases = []
+    }
     localStAuthors.push(currentAuthor)
     localStorage.setItem('localStAuthors', JSON.stringify(localStAuthors))
     localStPhrases.push(currentPhrase)
     localStorage.setItem('localStPhrases', JSON.stringify(localStPhrases))
+    likedPhrases++
     if(navFavs.style.visibility = 'hidden'){
         navFavs.style.visibility = 'visible'
     }
@@ -299,7 +340,7 @@ function createResponse(){
             createProfilePhoto()
         }
         else{
-            console.log('XHR error')
+            console.error('XHR error')
         }
     })
     dataFile.send()
@@ -361,6 +402,9 @@ document.addEventListener("DOMContentLoaded", function(){
     }else{
         navFavs.style.visibility = 'hidden'
     }
+
+    localStAuthors = JSON.parse(localStorage.getItem('localStAuthors'))
+    localStPhrases = JSON.parse(localStorage.getItem('localStPhrases'))
 
     createIconImage()
 })

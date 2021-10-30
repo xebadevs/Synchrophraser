@@ -52,11 +52,6 @@ body {
     color: #dfa241;
 }
 
-.favs-p {
-    color: whitesmoke;
-    padding: 0px 1px;
-}
-
 nav {
     display: grid;
     grid-template-columns: auto auto;
@@ -414,7 +409,8 @@ footer p {
     border-radius: 10px;
     min-height: 20px;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
-    margin: 0px 1px;
+    margin: 10px 1px;
+    padding: 0px 2px;
 }
 
 .favs-p.active {
@@ -444,6 +440,13 @@ footer p {
     width: 100%;    
     margin: auto;
     display: flex;
+}
+
+#favs-back-btn img {
+    margin-top: 3px;
+    height: 70%;
+    /* background-color: white; */
+
 }
 
 /* ------------------------------ Media Queries ------------------------------ */
@@ -570,6 +573,7 @@ footer p {
     .cont-favs {
         width: 90%;
     }
+<<<<<<< HEAD
     .cont-favs h1 {
         font-size: 20px;
         padding: 15px 0px;
@@ -578,5 +582,15 @@ footer p {
     .cont-favs p {
         padding: 5px;
         line-height: 1.4rem;
+=======
+    .cont-favs p {
+        line-height: 1.5rem;
+    }
+    .favs-back-btn button img {
+        height: 15px;
+    }
+    #favs-back-btn img {
+        margin-top: 1.7px;
+>>>>>>> dvp
     }
 }
