@@ -54,6 +54,11 @@ let localStAuthors = []
 let localStPhrases = []
 let favsActivator = []
 let phrasesRender = false
+let favsEnter = false
+let likedPhrases = 0
+let param = 0
+let activatedReload = false
+
 
 const favTemplate = (author, phrase) => {
     return(`
@@ -138,7 +143,7 @@ async function favsBlurry(){
     sendButton.disabled = true
     userQuestion.disabled = true
     musicIcon.disabled = true
-
+    
     localStAuthors = JSON.parse(localStorage.getItem('localStAuthors'))
     localStPhrases = JSON.parse(localStorage.getItem('localStPhrases'))
 
@@ -151,6 +156,10 @@ async function favsBlurry(){
         if(phrasesRender){
             favsP.removeChild(favPhrase)
         }
+    }
+    if(!favsEnter){
+        likedPhrases = 0
+        favsEnter = true
     }
 }
 
@@ -170,15 +179,40 @@ function favsBlurryBack(){
     musicIcon.disabled = false
 
     phrasesRender = true
+    favsReloadBtn.disabled = false
+
+    if(activatedReload){
+        likedPhrases = 0
+    }
 }
 
+// Reload function
+function favsReload(){
+    param = localStAuthors.length - likedPhrases
+    for(let i = param; i < param + likedPhrases; i++){
+        const addLastPhrases = document.createElement('p')
+        addLastPhrases.classList.add('favs-p')
+        addLastPhrases.innerHTML = favTemplate(localStAuthors[i], localStPhrases[i])
+        favsP.appendChild(addLastPhrases)
+    }
+    favsReloadBtn.disabled = true
+    activatedReload = true
+}
+
+// Reload Listener
+favsReloadBtn.addEventListener('click', favsReload)
 
 // Add author and phrase to My favourites function
 function addPhrase(){
+    if(localStAuthors === null && localStPhrases === null){
+        localStAuthors = []
+        localStPhrases = []
+    }
     localStAuthors.push(currentAuthor)
     localStorage.setItem('localStAuthors', JSON.stringify(localStAuthors))
     localStPhrases.push(currentPhrase)
     localStorage.setItem('localStPhrases', JSON.stringify(localStPhrases))
+    likedPhrases++
     if(navFavs.style.visibility = 'hidden'){
         navFavs.style.visibility = 'visible'
     }
