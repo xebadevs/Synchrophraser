@@ -17,6 +17,7 @@ const navFavs = document.getElementById('nav-favs')
 const contFavs = document.getElementById('cont-favs')
 const favsP = document.getElementById('favs-p')
 const favsBackBtn = document.getElementById('favs-back-btn')
+const favsReloadBtn = document.getElementById('favs-reload-btn')
 const contAudio = document.getElementsByTagName('audio')
 const contMusicBtn = document.getElementById('cont-music')
 
@@ -59,7 +60,6 @@ const favTemplate = (author, phrase) => {
         <b>${author}</b> ` + ` - ` + `${phrase}` + `.
     `)
 }
-
 
 
 // ---------------------------------------- FUNCTIONS ---------------------------------------- //
@@ -131,30 +131,31 @@ function blurry(){
 
 
 // Blur from My favourites
-function favsBlurry(){
+async function favsBlurry(){
     let blur = document.getElementById('blur')
     blur.classList.toggle('active')
     contFavs.classList.toggle('active')
     sendButton.disabled = true
     userQuestion.disabled = true
+    musicIcon.disabled = true
 
     localStAuthors = JSON.parse(localStorage.getItem('localStAuthors'))
     localStPhrases = JSON.parse(localStorage.getItem('localStPhrases'))
 
     for(let i=0; i < localStAuthors.length; i++){
         const favPhrase = document.createElement('p')
-            favPhrase.classList.add('favs-p')
-            favPhrase.innerHTML = favTemplate(localStAuthors[i], localStPhrases[i])
-            favsP.appendChild(favPhrase)
+        favPhrase.classList.add('favs-p')
+        favPhrase.innerHTML = favTemplate(localStAuthors[i], localStPhrases[i])
+        favsP.appendChild(favPhrase)
 
-            if(phrasesRender){
-                favsP.removeChild(favPhrase)
-            }
+        if(phrasesRender){
+            favsP.removeChild(favPhrase)
+        }
     }
-
-    
 }
 
+
+// Back button from My favourites
 function favsBlurryBack(){
     let blur = document.getElementById('blur')
     blur.classList.toggle('active')
@@ -166,6 +167,7 @@ function favsBlurryBack(){
     input.setSelectionRange(0, 0)
     sendButton.disabled = false
     userQuestion.disabled = false
+    musicIcon.disabled = false
 
     phrasesRender = true
 }
@@ -301,7 +303,7 @@ function createResponse(){
             createProfilePhoto()
         }
         else{
-            console.log('XHR error')
+            console.error('XHR error')
         }
     })
     dataFile.send()
@@ -363,6 +365,9 @@ document.addEventListener("DOMContentLoaded", function(){
     }else{
         navFavs.style.visibility = 'hidden'
     }
+
+    localStAuthors = JSON.parse(localStorage.getItem('localStAuthors'))
+    localStPhrases = JSON.parse(localStorage.getItem('localStPhrases'))
 
     createIconImage()
 })

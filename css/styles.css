@@ -442,6 +442,13 @@ footer p {
     display: flex;
 }
 
+#favs-back-btn img {
+    margin-top: 3px;
+    height: 70%;
+    /* background-color: white; */
+
+}
+
 /* ------------------------------ Media Queries ------------------------------ */
 
 @media screen and (max-width: 1560px) {
@@ -568,5 +575,11 @@ footer p {
     }
     .cont-favs p {
         line-height: 1.5rem;
+    }
+    .favs-back-btn button img {
+        height: 15px;
+    }
+    #favs-back-btn img {
+        margin-top: 1.7px;
     }
 }
