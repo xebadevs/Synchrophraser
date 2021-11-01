@@ -194,6 +194,44 @@ button:hover {
 }
 
 
+/* ------------------------------ Fireflies Section ------------------------------ */
+
+.fireflies :nth-child(1){
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    top: 10%;
+    left: 10%;
+    /* border-radius: 50%; */
+    background-color: fuchsia;
+    animation: flying-1 100s ease-in-out alternate infinite;
+    transition: translate 3s ease-in-out;
+}
+
+.fireflies :nth-child(2){
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    top: 40%;
+    left: 90%;
+    /* border-radius: 50%; */
+    background-color: greenyellow;
+    animation: flying-2 50s ease-in-out alternate infinite;
+}
+
+@keyframes flying-1 {
+    50% {
+        transform: rotate(180deg);
+        transform: translate(13px, 700px);
+    }
+}
+
+@keyframes flying-2 {
+    50% {
+        transform: rotate(90deg);
+        transform: translate(-450px, 35px);
+    }
+}
 /* ------------------------------ Footer Section ------------------------------ */
 
 footer {
@@ -573,7 +611,6 @@ footer p {
     .cont-favs {
         width: 90%;
     }
-<<<<<<< HEAD
     .cont-favs h1 {
         font-size: 20px;
         padding: 15px 0px;
@@ -581,9 +618,6 @@ footer p {
     }
     .cont-favs p {
         padding: 5px;
-        line-height: 1.4rem;
-=======
-    .cont-favs p {
         line-height: 1.5rem;
     }
     .favs-back-btn button img {
@@ -591,6 +625,5 @@ footer p {
     }
     #favs-back-btn img {
         margin-top: 1.7px;
->>>>>>> dvp
     }
 }
