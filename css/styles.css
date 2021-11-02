@@ -198,6 +198,7 @@ button:hover {
 /* ------------------------------ Fireflies Section ------------------------------ */
 
 .fireflies :nth-child(1),
+.fireflies :nth-child(2),
 .fireflies :nth-child(3),
 .fireflies :nth-child(4),
 .fireflies :nth-child(5) {
@@ -207,16 +208,16 @@ button:hover {
     top: 15%;
     left: 20%;
     background-color: fuchsia;
+    transform: rotate(170deg);
     animation: flying-1 70s ease alternate infinite;
 }
 
 .fireflies :nth-child(2){
     position: absolute;
-    height: 10px;
-    width: 10px;
     top: 40%;
     left: 90%;
     background-color: greenyellow;
+    transform: rotate(-90deg);
     animation: flying-2 55s ease alternate infinite;
 }
 
@@ -224,7 +225,8 @@ button:hover {
     top: 90%;
     left: 30%;
     background-color: goldenrod;
-    animation: flying-3 47s ease-in alternate infinite;
+    transform: rotate(100deg);
+    animation: flying-3 47s ease-in infinite;
 }
 
 .fireflies :nth-child(4){
@@ -243,48 +245,49 @@ button:hover {
 
 @keyframes flying-1 {
     50% {
-        transform: rotate(180deg);
         transform: translate(-350px, 700px);
     }
+    60% {
+        transform: translate(-350px, 700px) rotate(80deg);
+    }
     100% {
-        transform: translate(200px, 650px);
+        transform: translate(200px, 650px) rotate(260deg);
     }
 }
 
 @keyframes flying-2 {
     33% {
-        transform: rotate(90deg);
         transform: translate(-250px, 35px);
     }
     67% {
-        transform: translate(-100px, -200px);
+        transform: translate(-100px, -200px) rotate(180deg);
     }
     100% {
-        transform: translate(100px, 200px);
+        transform: translate(100px, 200px) rotate(-90deg);
     }
 }
 
 @keyframes flying-3 {
     50% {
-        transform: rotate(90deg);
         transform: translate(350px, 50px);
+    }
+    100% {
+        transform: rotate(180deg);
     }
 }
 
 @keyframes flying-4 {
     50% {
-        transform: rotate(90deg);
         transform: translate(50px, 500px);
     }
 }
 
 @keyframes flying-5 {
     50% {
-        transform: rotate(360deg);
-        transform: translate(550px, 100px);
+        transform: translate(550px, 100px) rotate(180deg);
     }
     100% {
-        transform: translate(700px, 300px);
+        transform: translate(700px, 300px) rotate(360deg);
     }
 }
 
