@@ -158,7 +158,7 @@ input[type="text"] {
     text-shadow: 2px 2px 1px rgb(73, 38, 6);
     justify-content: center;
     box-shadow: 5px 5px 22px 1px black,
-                inset 2px 2px 2px 2px rgba(255, 255, 255, 0.1);                ;
+                inset 2px 2px 2px 2px rgba(255, 255, 255, 0.1);
 }
 
 .input-div {
@@ -207,40 +207,41 @@ button:hover {
     width: 10px;
     top: 15%;
     left: 20%;
-    background-color: fuchsia;
     transform: rotate(170deg);
-    animation: flying-1 70s ease alternate infinite;
+    animation: flying-1 70s ease alternate infinite, firelight 3s infinite both;
+    border-radius: 50%;
 }
 
 .fireflies :nth-child(2){
     position: absolute;
     top: 40%;
     left: 90%;
-    background-color: greenyellow;
     transform: rotate(-90deg);
-    animation: flying-2 55s ease alternate infinite;
+    animation: flying-2 55s ease alternate infinite, firelight 3s infinite both;
 }
 
 .fireflies :nth-child(3){
     top: 90%;
     left: 30%;
-    background-color: goldenrod;
     transform: rotate(100deg);
-    animation: flying-3 47s ease-in infinite;
+    animation: flying-3 80s ease infinite, firelight 3s infinite both;
 }
 
 .fireflies :nth-child(4){
     top: 80%;
     left: 80%;
-    background-color: skyblue;
-    animation: flying-3 70s ease-in-out alternate infinite;
+    animation: flying-4 75s ease alternate infinite, firelight 3s infinite both;
 }
 
 .fireflies :nth-child(5){
     top: 20%;
     left: -5%;
-    background-color: skyblue;
-    animation: flying-5 80s ease-in-out alternate infinite;
+    animation: flying-5 80s ease alternate infinite, firelight 3s infinite both;
+}
+
+@keyframes firelight {
+    0% {box-shadow: 0px 0px -5px #CCB364, 0px 0px -5px #CCB364;}
+    50% {box-shadow: 5px 0px 15px rgba(255, 255, 0, 0.6), -5px 0px 15px rgba(255, 255, 0, 0.6)}
 }
 
 @keyframes flying-1 {
