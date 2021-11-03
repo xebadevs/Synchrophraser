@@ -7,6 +7,8 @@
 body {
     font-family: 'Roboto mono', monospace;
     overflow: hidden;
+    width: 100%;
+    position: fixed;
 }
 
 /* ------------------------------ Container Section ------------------------------ */
@@ -210,6 +212,7 @@ button:hover {
     transform: rotate(170deg);
     animation: flying-1 70s ease alternate infinite, firelight 3s infinite both;
     border-radius: 50%;
+    overflow: hidden;
 }
 
 .fireflies :nth-child(2){
