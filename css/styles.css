@@ -558,19 +558,16 @@ footer p {
         width: 60%;
     }
 }
-
 @media screen and (max-width: 1300px) {
     input[type="text"]{
         width: 70%;
     }
 }
-
 @media screen and (max-width: 1120px) {
     input[type="text"]{
         width: 90%;
     }
 }
-
 @media screen and (max-width: 576px) {
     input[type="text"]{
         width: 100%;
@@ -689,5 +686,24 @@ footer p {
     }
     #favs-back-btn img {
         margin-top: 1.7px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .title {
+        font-size: 2.2rem;
+    }
+    .nav-favs {
+        font-size: 0.6em;
+    }
+    .intro-div {
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+    }
+    footer {
+        height: 60px;
+    }
+    .cont-favs h1 {
+        font-size: 16px;
     }
 }

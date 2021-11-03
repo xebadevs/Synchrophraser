@@ -134,14 +134,13 @@ function blurry(){
 
 
 // Blur from My favourites
-async function favsBlurry(){
+function favsBlurry(){
     let blur = document.getElementById('blur')
     blur.classList.toggle('active')
     contFavs.classList.toggle('active')
     sendButton.disabled = true
     userQuestion.disabled = true
     contMusicBtn.disabled = true
-
     musicIcon.disabled = true
     
     localStAuthors = JSON.parse(localStorage.getItem('localStAuthors'))
@@ -290,7 +289,7 @@ function deleteLines(){
 
 // Show user question
 function showUserQuestion(){
-    respQuestion.innerHTML = userQuestion.value
+    respQuestion.innerText = userQuestion.value
 }
 
 
