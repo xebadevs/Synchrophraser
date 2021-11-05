@@ -109,6 +109,22 @@ function musicControl(){
 CONTMUSICBTN.addEventListener('click', musicControl)
 
 
+// Disabler function
+function disabler(){
+    SENDBUTTON.disabled = true
+    CONTMUSICBTN.disabled = true
+    USERQUESTION.disabled = true
+}
+
+
+// Enabler function
+function enabler(){
+    SENDBUTTON.disabled = false
+    CONTMUSICBTN.disabled = false
+    USERQUESTION.disabled = false
+}
+
+
 // Another question button or Return button
 ANOTHERQUESTIONBTN.addEventListener('keyup', e => {
     if(e.code === 'Enter'){
@@ -137,9 +153,7 @@ function favsBlurry(){
     let blur = document.getElementById('blur')
     blur.classList.toggle('active')
     CONTFAVS.classList.toggle('active')
-    SENDBUTTON.disabled = true
-    USERQUESTION.disabled = true
-    CONTMUSICBTN.disabled = true
+    disabler()
     MUSICICON.disabled = true
     lastLineOn = false
     
@@ -170,9 +184,7 @@ function favsBlurryBack(){
     CONTFAVS.classList.toggle('active')
     let input = document.getElementById('question-input')
     
-    SENDBUTTON.disabled = false
-    USERQUESTION.disabled = false
-    CONTMUSICBTN.disabled = false
+    enabler()
     phrasesRender = true
     lastLineOn = true
 
@@ -236,9 +248,7 @@ SENDBUTTON.addEventListener('click', () => {
         showUserQuestion()
         createResponse()
         let input = (USERQUESTION.value = '?')
-        SENDBUTTON.disabled = true
-        CONTMUSICBTN.disabled = true
-        USERQUESTION.disabled = true
+        disabler()
 })
 
 
@@ -252,9 +262,7 @@ ANOTHERQUESTIONBTN.addEventListener('click', () => {
         blurry()
         blurry()
         blurry()
-        SENDBUTTON.disabled = false
-        CONTMUSICBTN.disabled = false
-        USERQUESTION.disabled = false
+        enabler()
 })
 
 
