@@ -124,5 +124,23 @@
 		"author" : "Aristotle",
 		"photo" : "aristotle",
 		"phrase" : "The one exclusive sign of thorough knowledge is the power of teaching"
+	},
+			{
+		"id" : 21,
+		"author" : Nicola Tesla",
+		"photo" : tesla",
+		"phrase" : "Our virtues and our failings are inseparable, like force and matter. When they separete, man is no more"
+	},
+			{
+		"id" : 22,
+		"author" : Nicola Tesla",
+		"photo" : tesla",
+		"phrase" : "The present is theirs; the future, for which I really worked, is mine"
+	},
+			{
+		"id" : 23,
+		"author" : Nicola Tesla",
+		"photo" : tesla",
+		"phrase" : "The individual is ephemeral, races and nations come and pass away, but man remains"
 	}
 ]
