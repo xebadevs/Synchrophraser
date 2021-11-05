@@ -1,25 +1,24 @@
 // ------------------------------ DECLARATION OF VARIABLES AND CONSTANTS ------------------------------ //
 
 
-const sendButton = document.getElementById('sendButton')
-const anotherQuestionBtn = document.getElementById('anotherQuestionBtn')
-const respContent = document.getElementById('respContent')
-const lastLine = document.querySelector('.intro-last-line')
-const userQuestion = document.getElementById('question-input')
-const musicIcon = document.getElementById('cont-music')
-const respQuestion = document.getElementById('resp-question')
-const respContainer = document.getElementById('response')
-const copyToClipboardBtn = document.getElementById('resp-copy')
-const addToFavoritesBtn = document.getElementById('resp-favs')
-const respIcon = document.getElementById('resp-icon')
-const respPhotoCont = document.getElementById('resp-photo-cont')
-const navFavs = document.getElementById('nav-favs')
-const contFavs = document.getElementById('cont-favs')
-const favsP = document.getElementById('favs-p')
-const favsBackBtn = document.getElementById('favs-back-btn')
-const favsReloadBtn = document.getElementById('favs-reload-btn')
-const contAudio = document.getElementsByTagName('audio')
-const contMusicBtn = document.getElementById('cont-music')
+const SENDBUTTON = document.getElementById('sendButton')
+const ANOTHERQUESTIONBTN = document.getElementById('anotherQuestionBtn')
+const RESPCONTENT = document.getElementById('respContent')
+const LASTLINE = document.querySelector('.intro-last-line')
+const USERQUESTION = document.getElementById('question-input')
+const MUSICICON = document.getElementById('cont-music')
+const RESPQUESTION = document.getElementById('resp-question')
+const COPYTOCLIPBOARDBTN = document.getElementById('resp-copy')
+const ADDTOFAVORITESBTN = document.getElementById('resp-favs')
+const RESPICON = document.getElementById('resp-icon')
+const RESPPHOTOCONT = document.getElementById('resp-photo-cont')
+const NAVFAVS = document.getElementById('nav-favs')
+const CONTFAVS = document.getElementById('cont-favs')
+const FAVSP = document.getElementById('favs-p')
+const FAVSBACKBTN = document.getElementById('favs-back-btn')
+const FAVSRELOADBTN = document.getElementById('favs-reload-btn')
+const CONTAUDIO = document.getElementsByTagName('audio')
+const CONTMUSICBTN = document.getElementById('cont-music')
 
 let musicOn = false
 let lastLineOn = true
@@ -33,9 +32,9 @@ const lastLineArray = [
                     "choose yourself the meaning of it"
                     ]
 
-const typingTime = 80
-const deleteTime = 50
-const newLineTime = 3000
+const TYPINGTIME = 80
+const DELETETIME = 50
+const NEWLINETIME = 3000
 let linesIndex = 0
 let charIndex = 0
 let playlistCount = 0
@@ -60,7 +59,7 @@ let param = 0
 let activatedReload = false
 
 
-const favTemplate = (author, phrase) => {
+const FAVTEMPLATE = (author, phrase) => {
     return(`<b>${author}</b> ` + ` - ` + `${phrase}` + `.`)
 }
 
@@ -69,14 +68,14 @@ const favTemplate = (author, phrase) => {
 
 // Audio functions
 function automaticPlaylist(){
-    contAudio[playlistCount].play()
+    CONTAUDIO[playlistCount].play()
     musicPlayer()
 }
 
 // Music player function
 function musicPlayer(){
     setTimeout(function(){
-        if(!contAudio[playlistCount].ended){
+        if(!CONTAUDIO[playlistCount].ended){
             musicPlayer()
         }
         else if(playlistCount === 5){
@@ -85,7 +84,7 @@ function musicPlayer(){
         }
         else{
             playlistCount++
-            contAudio[playlistCount].play()
+            CONTAUDIO[playlistCount].play()
             musicPlayer()
         }
     }, 3000)
@@ -97,23 +96,23 @@ function musicControl(){
         musicOn = true
         createIconImage()
         automaticPlaylist()
-        musicIcon.classList.add('active')
+        MUSICICON.classList.add('active')
     }else{
         musicOn = false
         createIconImage()
-        contAudio[playlistCount].pause()
-        musicIcon.classList.remove('active')
+        CONTAUDIO[playlistCount].pause()
+        MUSICICON.classList.remove('active')
     }
 }
 
 // Authorized Music reproduction listener
-contMusicBtn.addEventListener('click', musicControl)
+CONTMUSICBTN.addEventListener('click', musicControl)
 
 
 // Another question button or Return button
-anotherQuestionBtn.addEventListener('keyup', e => {
+ANOTHERQUESTIONBTN.addEventListener('keyup', e => {
     if(e.code === 'Enter'){
-        anotherQuestionBtn.click()
+        ANOTHERQUESTIONBTN.click()
     }
 })
 
@@ -137,11 +136,11 @@ function blurry(){
 function favsBlurry(){
     let blur = document.getElementById('blur')
     blur.classList.toggle('active')
-    contFavs.classList.toggle('active')
-    sendButton.disabled = true
-    userQuestion.disabled = true
-    contMusicBtn.disabled = true
-    musicIcon.disabled = true
+    CONTFAVS.classList.toggle('active')
+    SENDBUTTON.disabled = true
+    USERQUESTION.disabled = true
+    CONTMUSICBTN.disabled = true
+    MUSICICON.disabled = true
     lastLineOn = false
     
     localStAuthors = JSON.parse(localStorage.getItem('localStAuthors'))
@@ -150,11 +149,11 @@ function favsBlurry(){
     for(let i=0; i < localStAuthors.length; i++){
         const favPhrase = document.createElement('p')
         favPhrase.classList.add('favs-p')
-        favPhrase.innerHTML = favTemplate(localStAuthors[i], localStPhrases[i])
-        favsP.appendChild(favPhrase)
+        favPhrase.innerHTML = FAVTEMPLATE(localStAuthors[i], localStPhrases[i])
+        FAVSP.appendChild(favPhrase)
 
         if(phrasesRender){
-            favsP.removeChild(favPhrase)
+            FAVSP.removeChild(favPhrase)
         }
     }
     if(!favsEnter){
@@ -168,22 +167,22 @@ function favsBlurry(){
 function favsBlurryBack(){
     let blur = document.getElementById('blur')
     blur.classList.toggle('active')
-    contFavs.classList.toggle('active')
+    CONTFAVS.classList.toggle('active')
     let input = document.getElementById('question-input')
     
-    sendButton.disabled = false
-    userQuestion.disabled = false
-    contMusicBtn.disabled = false
+    SENDBUTTON.disabled = false
+    USERQUESTION.disabled = false
+    CONTMUSICBTN.disabled = false
     phrasesRender = true
     lastLineOn = true
 
     input.focus()
     input.value = '?'
     input.setSelectionRange(0, 0)
-    musicIcon.disabled = false
+    MUSICICON.disabled = false
 
     phrasesRender = true
-    favsReloadBtn.disabled = false
+    FAVSRELOADBTN.disabled = false
 
     if(activatedReload){
         likedPhrases = 0
@@ -196,15 +195,15 @@ function favsReload(){
     for(let i = param; i < param + likedPhrases; i++){
         const addLastPhrases = document.createElement('p')
         addLastPhrases.classList.add('favs-p')
-        addLastPhrases.innerHTML = favTemplate(localStAuthors[i], localStPhrases[i])
-        favsP.appendChild(addLastPhrases)
+        addLastPhrases.innerHTML = FAVTEMPLATE(localStAuthors[i], localStPhrases[i])
+        FAVSP.appendChild(addLastPhrases)
     }
-    favsReloadBtn.disabled = true
+    FAVSRELOADBTN.disabled = true
     activatedReload = true
 }
 
 // Reload Listener
-favsReloadBtn.addEventListener('click', favsReload)
+FAVSRELOADBTN.addEventListener('click', favsReload)
 
 // Add author and phrase to My favourites function
 function addPhrase(){
@@ -217,35 +216,35 @@ function addPhrase(){
     localStPhrases.push(currentPhrase)
     localStorage.setItem('localStPhrases', JSON.stringify(localStPhrases))
     likedPhrases++
-    if(navFavs.style.visibility = 'hidden'){
-        navFavs.style.visibility = 'visible'
+    if(NAVFAVS.style.visibility = 'hidden'){
+        NAVFAVS.style.visibility = 'visible'
     }
 }
 
 
 // My favourites Listener
-navFavs.addEventListener('click', favsBlurry)
+NAVFAVS.addEventListener('click', favsBlurry)
 
 
 // My favourites Back Listener
-favsBackBtn.addEventListener('click', favsBlurryBack)
+FAVSBACKBTN.addEventListener('click', favsBlurryBack)
 
 
 // Send button listener
-sendButton.addEventListener('click', () => {
+SENDBUTTON.addEventListener('click', () => {
         blurry()
         showUserQuestion()
         createResponse()
-        let input = (userQuestion.value = '?')
-        sendButton.disabled = true
-        contMusicBtn.disabled = true
-        userQuestion.disabled = true
+        let input = (USERQUESTION.value = '?')
+        SENDBUTTON.disabled = true
+        CONTMUSICBTN.disabled = true
+        USERQUESTION.disabled = true
 })
 
 
 // Aclaration: the function 'blurry()' executes tree times because with only one demands double click,
 // and with one repetition the program fails
-anotherQuestionBtn.addEventListener('click', () => {
+ANOTHERQUESTIONBTN.addEventListener('click', () => {
         let input = document.getElementById('question-input')
         input.focus()
         input.value = '?'
@@ -253,21 +252,21 @@ anotherQuestionBtn.addEventListener('click', () => {
         blurry()
         blurry()
         blurry()
-        sendButton.disabled = false
-        contMusicBtn.disabled = false
-        userQuestion.disabled = false
+        SENDBUTTON.disabled = false
+        CONTMUSICBTN.disabled = false
+        USERQUESTION.disabled = false
 })
 
 
 // Typing function
 function machineType(){
     if(charIndex < lastLineArray[linesIndex].length && lastLineOn){
-        lastLine.textContent += lastLineArray[linesIndex].charAt(charIndex)
+        LASTLINE.textContent += lastLineArray[linesIndex].charAt(charIndex)
         charIndex++
-        setTimeout(machineType, typingTime)
+        setTimeout(machineType, TYPINGTIME)
     }
     else{
-        setTimeout(deleteLines, newLineTime)
+        setTimeout(deleteLines, NEWLINETIME)
     }
 }
     
@@ -275,23 +274,23 @@ function machineType(){
 // Delete function
 function deleteLines(){
     if(charIndex > 0){
-        lastLine.textContent = lastLineArray[linesIndex].substring(0, charIndex - 1)
+        LASTLINE.textContent = lastLineArray[linesIndex].substring(0, charIndex - 1)
         charIndex--
-        setTimeout(deleteLines, deleteTime)
+        setTimeout(deleteLines, DELETETIME)
     }
     else{
         linesIndex++
         if(linesIndex >= lastLineArray.length){
             linesIndex = 0
         }
-        setTimeout(machineType, typingTime + 1100)
+        setTimeout(machineType, TYPINGTIME + 1100)
     }
 }
     
 
 // Show user question
 function showUserQuestion(){
-    respQuestion.innerText = userQuestion.value
+    RESPQUESTION.innerText = USERQUESTION.value
 }
 
 
@@ -300,7 +299,7 @@ function createProfilePhoto(){
     profilePhoto.src = './img/profiles/' + currentPhoto + '.jpg'
     profilePhoto.id = 'profilePhoto'
     profilePhoto.alt = 'profile photo'
-    respPhotoCont.appendChild(profilePhoto)
+    RESPPHOTOCONT.appendChild(profilePhoto)
 }
 
 // Create music icon function
@@ -309,12 +308,12 @@ function createIconImage(){
         iconImage.src = './img/svg-musicon.svg'
         iconImage.id = 'music-on'
         iconImage.alt = 'music on icon'
-        musicIcon.appendChild(iconImage)
+        MUSICICON.appendChild(iconImage)
     }else{
         iconImage.src = './img/svg-soundoff.svg'
         iconImage.id = 'music-off'
         iconImage.alt = 'music off icon'
-        musicIcon.appendChild(iconImage)
+        MUSICICON.appendChild(iconImage)
     }
 }
 
@@ -337,7 +336,7 @@ function createResponse(){
             currentPhrase = dataArray[synchroNumber].phrase
             currentPhoto = dataArray[synchroNumber].photo
             currentAuthor = dataArray[synchroNumber].author
-            respContent.innerHTML = dataArray[synchroNumber].phrase
+            RESPCONTENT.innerHTML = dataArray[synchroNumber].phrase
             createProfilePhoto()
         }
         else{
@@ -349,7 +348,7 @@ function createResponse(){
 
 
 // Copy to clipboard listener
-copyToClipboardBtn.addEventListener('click', copyToClipboard, false)
+COPYTOCLIPBOARDBTN.addEventListener('click', copyToClipboard, false)
 
 
 // Copy to clipboard function: DEPRECATED ONE!
@@ -368,18 +367,18 @@ copyToClipboardBtn.addEventListener('click', copyToClipboard, false)
 // Copy to clipboard function with Clipboard API
 function copyToClipboard(){
     navigator.clipboard.writeText(currentPhrase)
-    respIcon.innerHTML = 'Copied!'
+    RESPICON.innerHTML = 'Copied!'
     setTimeout(deleteRespIconValue, 2000)
 }
 
 
 // Add to favorites listener
-addToFavoritesBtn.addEventListener('click', addToFavorites, false)
+ADDTOFAVORITESBTN.addEventListener('click', addToFavorites, false)
 
 
 // Add to Favorites function
 function addToFavorites(){
-    respIcon.innerText = 'Added!'
+    RESPICON.innerText = 'Added!'
     addPhrase()
     setTimeout(deleteRespIconValue, 2000)
 }
@@ -387,7 +386,7 @@ function addToFavorites(){
 
 // Delete respIcon value
 function deleteRespIconValue(){
-    respIcon.innerHTML = ''
+    RESPICON.innerHTML = ''
 }
 
 
@@ -395,13 +394,13 @@ function deleteRespIconValue(){
 
 
 document.addEventListener("DOMContentLoaded", function(){
-    setTimeout(machineType, newLineTime + 350)
+    setTimeout(machineType, NEWLINETIME + 350)
 
     favsActivator = JSON.parse(localStorage.getItem('localStAuthors'))
     if(favsActivator != null){
-        navFavs.style.visibility = 'visible'
+        NAVFAVS.style.visibility = 'visible'
     }else{
-        navFavs.style.visibility = 'hidden'
+        NAVFAVS.style.visibility = 'hidden'
     }
 
     localStAuthors = JSON.parse(localStorage.getItem('localStAuthors'))
