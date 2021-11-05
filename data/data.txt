@@ -127,20 +127,38 @@
 	},
 			{
 		"id" : 21,
-		"author" : Nicola Tesla",
+		"author" : "Nicola Tesla",
 		"photo" : tesla",
 		"phrase" : "Our virtues and our failings are inseparable, like force and matter. When they separete, man is no more"
 	},
 			{
-		"id" : 22,
-		"author" : Nicola Tesla",
-		"photo" : tesla",
+		"id" : "22,
+		"author" : "Nicola Tesla",
+		"photo" : "tesla",
 		"phrase" : "The present is theirs; the future, for which I really worked, is mine"
 	},
 			{
 		"id" : 23,
-		"author" : Nicola Tesla",
-		"photo" : tesla",
+		"author" : "Nicola Tesla",
+		"photo" : "tesla",
 		"phrase" : "The individual is ephemeral, races and nations come and pass away, but man remains"
+	},
+			{
+		"id" : 24,
+		"author" : "Immanuel Kant",
+		"photo" : "kant",
+		"phrase" : "We are not rich by what we possess but by what we can do without"
+	},
+			{
+		"id" : 25,
+		"author" : "Immanuel Kant",
+		"photo" : "kant",
+		"phrase" : "Look closely. The beautiful may be small"
+	},
+			{
+		"id" : 26,
+		"author" : "Immanuel Kant",
+		"photo" : "kant",
+		"phrase" : "Dare to know! Have the courage to use your own intelligence!"
 	}
 ]
