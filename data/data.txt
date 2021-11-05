@@ -128,11 +128,11 @@
 			{
 		"id" : 21,
 		"author" : "Nicola Tesla",
-		"photo" : tesla",
+		"photo" : "tesla",
 		"phrase" : "Our virtues and our failings are inseparable, like force and matter. When they separete, man is no more"
 	},
 			{
-		"id" : "22,
+		"id" : 22,
 		"author" : "Nicola Tesla",
 		"photo" : "tesla",
 		"phrase" : "The present is theirs; the future, for which I really worked, is mine"

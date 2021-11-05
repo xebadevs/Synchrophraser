@@ -142,6 +142,7 @@ function favsBlurry(){
     userQuestion.disabled = true
     contMusicBtn.disabled = true
     musicIcon.disabled = true
+    lastLineOn = false
     
     localStAuthors = JSON.parse(localStorage.getItem('localStAuthors'))
     localStPhrases = JSON.parse(localStorage.getItem('localStPhrases'))
@@ -174,6 +175,7 @@ function favsBlurryBack(){
     userQuestion.disabled = false
     contMusicBtn.disabled = false
     phrasesRender = true
+    lastLineOn = true
 
     input.focus()
     input.value = '?'
