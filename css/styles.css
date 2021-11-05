@@ -362,6 +362,19 @@ footer p {
     color: rgba(255, 255, 255, 0.7);
 }
 
+.button-cont {
+    margin: auto;
+    width: auto;
+    height: auto;
+}
+
+.button-cont:focus {
+border: 1px solid black;
+    width: 6px;
+    height: 6px;
+    background-color: red;
+}
+
 
 /* Profile photo */
 .resp-photo {
