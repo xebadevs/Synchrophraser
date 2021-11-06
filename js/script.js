@@ -339,7 +339,7 @@ function randomNumber(param){
     
 // XHR function
 function createResponse(){
-    dataFile.open('GET', '../data/data.txt', true)
+    dataFile.open('GET', './data/data.txt', true)
     dataFile.addEventListener('load', function(){
         if(this.readyState == 4 && this.status == 200){
             dataArray = JSON.parse(dataFile.response)
