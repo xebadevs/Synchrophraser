@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Roboto mono', monospace;
-    overflow: scroll;
+    overflow: hidden;
     width: 100%;
     position: fixed;
 }
