@@ -205,8 +205,8 @@ button:hover {
 .fireflies :nth-child(4),
 .fireflies :nth-child(5) {
     position: absolute;
-    height: 10px;
-    width: 10px;
+    height: 8px;
+    width: 8px;
     top: 15%;
     left: 20%;
     transform: rotate(170deg);
@@ -786,6 +786,14 @@ border: 1px solid black;
     .resp-button a {
         font-size: 0.8em;
     }
+    .fireflies :nth-child(1),
+    .fireflies :nth-child(2),
+    .fireflies :nth-child(3),
+    .fireflies :nth-child(4),
+    .fireflies :nth-child(5) {
+        height: 6px;
+        width: 6px;
+    }
 }
 
 /* Nest Hub Max Dimensions */
@@ -844,5 +852,13 @@ border: 1px solid black;
     }
     .resp-button a {
         font-size: 0.8em;
+    }
+    .fireflies :nth-child(1),
+    .fireflies :nth-child(2),
+    .fireflies :nth-child(3),
+    .fireflies :nth-child(4),
+    .fireflies :nth-child(5) {
+        height: 7px;
+        width: 7px;
     }
 }
