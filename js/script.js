@@ -339,10 +339,10 @@ function randomNumber(param){
     
 // XHR function
 function createResponse(){
-    // General local route
+// General local route
     // dataFile.open('GET', './data/data.txt', true)
-    // GitHub Pages route
-    dataFile.open('GET', './Synchrophraser/data/data.txt', true)
+// GitHub Pages route
+    dataFile.open('GET', 'https://xebadevs.github.io/Synchrophraser/data/data.txt', true)
     dataFile.addEventListener('load', function(){
         if(this.readyState == 4 && this.status == 200){
             dataArray = JSON.parse(dataFile.response)
