@@ -406,13 +406,14 @@ function addToFavorites(){
                 RESPICON.innerText = 'Already added!'
                 setTimeout(deleteRespIconValue, 2000)
                 return
+            }
         }
     }
+    setTimeout(deleteRespIconValue, 2000)
     RESPICON.innerText = 'Added!'
     addPhrase()
-    setTimeout(deleteRespIconValue, 2000)
-    }
 }
+
 
 // Delete respIcon value
 function deleteRespIconValue(){
