@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Roboto mono', monospace;
-    overflow: hidden;
+    overflow: scroll;
     width: 100%;
     position: fixed;
 }
@@ -632,7 +632,7 @@ border: 1px solid black;
     p {
         font-size: 0.7em;
     }
-    .resp-quostion {
+    .resp-question {
         width: 30px;
     }
     .resp-content-container {
@@ -700,6 +700,14 @@ border: 1px solid black;
     #favs-back-btn img {
         margin-top: 1.7px;
     }
+    .fireflies :nth-child(1),
+    .fireflies :nth-child(2),
+    .fireflies :nth-child(3),
+    .fireflies :nth-child(4),
+    .fireflies :nth-child(5) {
+        height: 5px;
+        width: 5px;
+    }
 }
 
 @media screen and (max-width: 320px){
@@ -718,5 +726,123 @@ border: 1px solid black;
     }
     .cont-favs h1 {
         font-size: 16px;
+    }
+}
+
+/* Nest Hub Dimensions */
+@media screen and (max-width: 1024px) and (height: 600px){
+    input[type="text"]{
+        width: 70%;
+        min-height: 30px;
+        font-size: 0.93rem;
+        text-shadow: 1px 1px 1px rgb(73, 38, 6);
+    }
+    .intro-div {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .intro-div p {
+        font-size: 1.1rem;
+    }
+    .question-div p {
+        font-size: 0.7rem;
+    }
+    .btn button {
+        height: 20px;
+        width: 55px;
+        font-size: 0.7em;
+    }
+    .resp-question {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 50%;
+        height: 2rem;
+    }
+    .resp-question p {
+        font-size: 0.8rem;
+    }
+    .resp-quotmarkclose {
+        min-height: 2em;
+    }
+    .resp-quotmarkopen img, .resp-quotmarkclose img {
+        height: 2em;
+        margin: auto 5px auto 5px;
+    }
+    .resp-favs, .resp-copy {
+        height: 1.3rem;
+        width: 1.3rem;
+        margin: 10px 7px 0 0;
+    }
+    .resp-icon p {
+        font-size: 0.7rem;
+        margin: 12px 8px 0 0;
+    }
+    .resp-favs:hover, .resp-copy:hover {
+        height: 1.3rem;
+        width: 1.3rem;
+        margin: 10px 7px 0 0;
+    }
+    .resp-button a {
+        font-size: 0.8em;
+    }
+}
+
+/* Nest Hub Max Dimensions */
+@media screen and (max-width: 1280px) and (height: 800px){
+    input[type="text"]{
+        width: 70%;
+        min-height: 40px;
+        font-size: 1.3rem;
+        text-shadow: 1px 1px 1px rgb(73, 38, 6);
+    }
+    .intro-div {
+        margin-top: 10rem;
+        margin-bottom: 5rem;
+    }
+    .intro-div p {
+        font-size: 1.3rem;
+    }
+    .question-div p {
+        font-size: 0.9rem;
+    }
+    .btn button {
+        height: 20px;
+        width: 55px;
+        font-size: 0.7em;
+    }
+    .resp-question {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 50%;
+        height: 2rem;
+    }
+    .resp-question p {
+        font-size: 0.8rem;
+    }
+    .resp-quotmarkclose {
+        min-height: 2em;
+    }
+    .resp-quotmarkopen img, .resp-quotmarkclose img {
+        height: 2em;
+        margin: auto 5px auto 5px;
+    }
+    .resp-favs, .resp-copy {
+        height: 1.3rem;
+        width: 1.3rem;
+        margin: 10px 7px 0 0;
+    }
+    .resp-icon p {
+        font-size: 0.7rem;
+        margin: 12px 8px 0 0;
+    }
+    .resp-favs:hover, .resp-copy:hover {
+        height: 1.3rem;
+        width: 1.3rem;
+        margin: 10px 7px 0 0;
+    }
+    .resp-button a {
+        font-size: 0.8em;
     }
 }

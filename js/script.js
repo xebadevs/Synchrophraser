@@ -1,22 +1,22 @@
 // ------------------------------ DECLARATION OF VARIABLES AND CONSTANTS ------------------------------ //
 
 
+const LASTLINE = document.querySelector('.intro-last-line')
 const SENDBUTTON = document.getElementById('sendButton')
 const ANOTHERQUESTIONBTN = document.getElementById('anotherQuestionBtn')
-const RESPCONTENT = document.getElementById('respContent')
-const LASTLINE = document.querySelector('.intro-last-line')
 const USERQUESTION = document.getElementById('question-input')
-const MUSICICON = document.getElementById('cont-music')
+const RESPCONTENT = document.getElementById('respContent')
 const RESPQUESTION = document.getElementById('resp-question')
-const COPYTOCLIPBOARDBTN = document.getElementById('resp-copy')
-const ADDTOFAVORITESBTN = document.getElementById('resp-favs')
 const RESPICON = document.getElementById('resp-icon')
 const RESPPHOTOCONT = document.getElementById('resp-photo-cont')
+const COPYTOCLIPBOARDBTN = document.getElementById('resp-copy')
+const ADDTOFAVORITESBTN = document.getElementById('resp-favs')
 const NAVFAVS = document.getElementById('nav-favs')
 const CONTFAVS = document.getElementById('cont-favs')
 const FAVSP = document.getElementById('favs-p')
 const FAVSBACKBTN = document.getElementById('favs-back-btn')
 const FAVSRELOADBTN = document.getElementById('favs-reload-btn')
+const MUSICICON = document.getElementById('cont-music')
 const CONTAUDIO = document.getElementsByTagName('audio')
 const CONTMUSICBTN = document.getElementById('cont-music')
 
@@ -38,7 +38,6 @@ const NEWLINETIME = 3000
 let linesIndex = 0
 let charIndex = 0
 let playlistCount = 0
-
 let dataFile = new XMLHttpRequest()
 let dataArray = []
 let profilePhoto = new Image()
@@ -46,6 +45,8 @@ let iconImage = new Image()
 
 let totalPhrases = 0
 let synchroNumber = 0
+let likedPhrases = 0
+let param = 0
 let currentPhrase = ''
 let currentPhoto = ''
 let currentAuthor = ''
@@ -54,23 +55,22 @@ let localStPhrases = []
 let favsActivator = []
 let phrasesRender = false
 let favsEnter = false
-let likedPhrases = 0
-let param = 0
 let activatedReload = false
 
 
-const FAVTEMPLATE = (author, phrase) => {
+const FAVSTEMPLATE = (author, phrase) => {
     return(`<b>${author}</b> ` + ` - ` + `${phrase}` + `.`)
 }
 
 
 // ---------------------------------------- FUNCTIONS ---------------------------------------- //
 
-// Audio functions
+// Automatic Playlist functions
 function automaticPlaylist(){
     CONTAUDIO[playlistCount].play()
     musicPlayer()
 }
+
 
 // Music player function
 function musicPlayer(){
@@ -90,7 +90,8 @@ function musicPlayer(){
     }, 3000)
 }
 
-// Authorized Music reproduction
+
+// Manual Music reproduction
 function musicControl(){
     if(musicOn === false){
         musicOn = true
@@ -105,7 +106,8 @@ function musicControl(){
     }
 }
 
-// Authorized Music reproduction listener
+
+// Manual Music reproduction listener
 CONTMUSICBTN.addEventListener('click', musicControl)
 
 
@@ -125,7 +127,7 @@ function enabler(){
 }
 
 
-// Another question button or Return button
+// Resp Return button
 ANOTHERQUESTIONBTN.addEventListener('keyup', e => {
     if(e.code === 'Enter'){
         ANOTHERQUESTIONBTN.click()
@@ -148,8 +150,8 @@ function blurry(){
 }
 
 
-// Blur from My favourites
-function favsBlurry(){
+// Blur and Response generator function
+async function favsBlurry(){
     let blur = document.getElementById('blur')
     blur.classList.toggle('active')
     CONTFAVS.classList.toggle('active')
@@ -157,13 +159,13 @@ function favsBlurry(){
     MUSICICON.disabled = true
     lastLineOn = false
     
-    localStAuthors = JSON.parse(localStorage.getItem('localStAuthors'))
-    localStPhrases = JSON.parse(localStorage.getItem('localStPhrases'))
+    localStAuthors = await JSON.parse(localStorage.getItem('localStAuthors'))
+    localStPhrases = await JSON.parse(localStorage.getItem('localStPhrases'))
 
     for(let i=0; i < localStAuthors.length; i++){
         const favPhrase = document.createElement('p')
         favPhrase.classList.add('favs-p')
-        favPhrase.innerHTML = FAVTEMPLATE(localStAuthors[i], localStPhrases[i])
+        favPhrase.innerHTML = FAVSTEMPLATE(localStAuthors[i], localStPhrases[i])
         FAVSP.appendChild(favPhrase)
 
         if(phrasesRender){
@@ -191,9 +193,8 @@ function favsBlurryBack(){
     input.focus()
     input.value = '?'
     input.setSelectionRange(0, 0)
+    
     MUSICICON.disabled = false
-
-    phrasesRender = true
     FAVSRELOADBTN.disabled = false
 
     if(activatedReload){
@@ -201,21 +202,24 @@ function favsBlurryBack(){
     }
 }
 
+
 // Reload function
 function favsReload(){
     param = localStAuthors.length - likedPhrases
     for(let i = param; i < param + likedPhrases; i++){
         const addLastPhrases = document.createElement('p')
         addLastPhrases.classList.add('favs-p')
-        addLastPhrases.innerHTML = FAVTEMPLATE(localStAuthors[i], localStPhrases[i])
+        addLastPhrases.innerHTML = FAVSTEMPLATE(localStAuthors[i], localStPhrases[i])
         FAVSP.appendChild(addLastPhrases)
     }
     FAVSRELOADBTN.disabled = true
     activatedReload = true
 }
 
+
 // Reload Listener
 FAVSRELOADBTN.addEventListener('click', favsReload)
+
 
 // Add author and phrase to My favourites function
 function addPhrase(){
@@ -253,7 +257,7 @@ SENDBUTTON.addEventListener('click', () => {
 
 
 // Aclaration: the function 'blurry()' executes tree times because with only one demands double click,
-// and with one repetition the program fails
+// and with one repetition the program fails. I didn't know yet how to fix it
 ANOTHERQUESTIONBTN.addEventListener('click', () => {
         let input = document.getElementById('question-input')
         input.focus()
@@ -279,7 +283,7 @@ function machineType(){
 }
     
     
-// Delete function
+// Delete function (for Automatic Typing)
 function deleteLines(){
     if(charIndex > 0){
         LASTLINE.textContent = lastLineArray[linesIndex].substring(0, charIndex - 1)
@@ -309,6 +313,7 @@ function createProfilePhoto(){
     profilePhoto.alt = 'profile photo'
     RESPPHOTOCONT.appendChild(profilePhoto)
 }
+
 
 // Create music icon function
 function createIconImage(){
@@ -357,7 +362,6 @@ function createResponse(){
 
 // Copy to clipboard listener
 COPYTOCLIPBOARDBTN.addEventListener('click', copyToClipboard, false)
-
 
 // Copy to clipboard function: DEPRECATED ONE!
 // function copyToClipboard(){
