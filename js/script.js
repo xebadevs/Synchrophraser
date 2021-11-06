@@ -50,6 +50,8 @@ let param = 0
 let currentPhrase = ''
 let currentPhoto = ''
 let currentAuthor = ''
+let currentId = ''
+let localStIds = []
 let localStAuthors = []
 let localStPhrases = []
 let favsActivator = []
@@ -161,6 +163,7 @@ async function favsBlurry(){
     
     localStAuthors = await JSON.parse(localStorage.getItem('localStAuthors'))
     localStPhrases = await JSON.parse(localStorage.getItem('localStPhrases'))
+    localStIds = await JSON.parse(localStorage.getItem('localStIds'))
 
     for(let i=0; i < localStAuthors.length; i++){
         const favPhrase = document.createElement('p')
@@ -223,14 +226,17 @@ FAVSRELOADBTN.addEventListener('click', favsReload)
 
 // Add author and phrase to My favourites function
 function addPhrase(){
-    if(localStAuthors === null && localStPhrases === null){
+    if(localStAuthors === null && localStPhrases === null && localStIds === null){
         localStAuthors = []
         localStPhrases = []
+        localStIds = []
     }
     localStAuthors.push(currentAuthor)
-    localStorage.setItem('localStAuthors', JSON.stringify(localStAuthors))
+        localStorage.setItem('localStAuthors', JSON.stringify(localStAuthors))
     localStPhrases.push(currentPhrase)
-    localStorage.setItem('localStPhrases', JSON.stringify(localStPhrases))
+        localStorage.setItem('localStPhrases', JSON.stringify(localStPhrases))
+    localStIds.push(currentId)
+        localStorage.setItem('localStIds', JSON.stringify(localStIds))
     likedPhrases++
     if(NAVFAVS.style.visibility = 'hidden'){
         NAVFAVS.style.visibility = 'visible'
@@ -339,7 +345,7 @@ function randomNumber(param){
     
 // XHR function
 function createResponse(){
-// General local route
+// Local route
     // dataFile.open('GET', './data/data.txt', true)
 // GitHub Pages route
     dataFile.open('GET', 'https://xebadevs.github.io/Synchrophraser/data/data.txt', true)
@@ -352,11 +358,12 @@ function createResponse(){
             currentPhrase = dataArray[synchroNumber].phrase
             currentPhoto = dataArray[synchroNumber].photo
             currentAuthor = dataArray[synchroNumber].author
+            currentId = dataArray[synchroNumber].id
             RESPCONTENT.innerHTML = dataArray[synchroNumber].phrase
             createProfilePhoto()
         }
         else{
-            console.error('XHR error')
+            console.error('XHR Error: For localhost uses, comment line 351 and uncomment line 349. For external server deploy, do exactly the opposite')
         }
     })
     dataFile.send()
@@ -393,11 +400,19 @@ ADDTOFAVORITESBTN.addEventListener('click', addToFavorites, false)
 
 // Add to Favorites function
 function addToFavorites(){
+    if(localStIds != null){
+        for(i=0; i < localStIds.length; i++){
+            if(localStIds[i] === currentId){
+                RESPICON.innerText = 'Already added!'
+                setTimeout(deleteRespIconValue, 2000)
+                return
+        }
+    }
     RESPICON.innerText = 'Added!'
     addPhrase()
     setTimeout(deleteRespIconValue, 2000)
+    }
 }
-
 
 // Delete respIcon value
 function deleteRespIconValue(){
@@ -420,6 +435,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     localStAuthors = JSON.parse(localStorage.getItem('localStAuthors'))
     localStPhrases = JSON.parse(localStorage.getItem('localStPhrases'))
+    localStIds = JSON.parse(localStorage.getItem('localStIds'))
 
     createIconImage()
 })

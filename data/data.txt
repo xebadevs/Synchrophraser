@@ -160,5 +160,95 @@
 		"author" : "Immanuel Kant",
 		"photo" : "kant",
 		"phrase" : "Dare to know! Have the courage to use your own intelligence!"
+	},
+			{
+		"id" : 27,
+		"author" : "Emil Cioran",
+		"photo" : "cioran",
+		"phrase" : "We are afraid of the enormity of the possible"
+	},
+			{
+		"id" : 28,
+		"author" : "Emil Cioran",
+		"photo" : "cioran",
+		"phrase" : "Each of us is born with a share of purity, predestined to be corrupted by our commerce with mankind"
+	},
+			{
+		"id" : 29,
+		"author" : "Emil Cioran",
+		"photo" : "cioran",
+		"phrase" : "Music is the refuge of souls ulcerated by happiness"
+	},
+			{
+		"id" : 30,
+		"author" : "Friedrich Nietzsche",
+		"photo" : "nietzsche",
+		"phrase" : "Without music, life would be a mistake"
+	},
+			{
+		"id" : 31,
+		"author" : "Friedrich Nietzsche",
+		"photo" : "nietzsche",
+		"phrase" : "You have your way. I have my way. As for the right way, the correct way, and the only way, it does not exist"
+	},
+			{
+		"id" : 32,
+		"author" : "Friedrich Nietzsche",
+		"photo" : "nietzsche",
+		"phrase" : "You must have chaos within you to give birth to a dancing star"
+	},
+			{
+		"id" : 33,
+		"author" : "Fyodor Dostoevsky",
+		"photo" : "dostoevsky",
+		"phrase" : "But how could you live and have no story to tell?"
+	},
+			{
+		"id" : 34,
+		"author" : "Fyodor Dostoevsky",
+		"photo" : "dostoevsky",
+		"phrase" : "To go wrong in one's own way is better than to go right in someone else's"
+	},
+			{
+		"id" : 35,
+		"author" : "Fyodor Dostoevsky",
+		"photo" : "dostoevsky",
+		"phrase" : "What is hell? I maintain that it is the suffering of being unable to love"
+	},
+			{
+		"id" : 36,
+		"author" : "Lao Tzu",
+		"photo" : "tzu",
+		"phrase" : "The journey of a thousand miles begins with a single step"
+	},
+			{
+		"id" : 37,
+		"author" : "Lao Tzu",
+		"photo" : "tzu",
+		"phrase" : "When you are content to be simply yourself and don't compare or compete, everyone will respect you"
+	},
+			{
+		"id" : 38,
+		"author" : "Lao Tzu",
+		"photo" : "tzu",
+		"phrase" : "Care about what other people think and you will always be their prisoner"
+	},
+			{
+		"id" : 39,
+		"author" : "Seneca",
+		"photo" : "seneca",
+		"phrase" : "You act like mortals in all that you fear, and like immortals in all that you desire"
+	},
+			{
+		"id" : 40,
+		"author" : "Seneca",
+		"photo" : "seneca",
+		"phrase" : "If a man knows not to which port he sails, no wind is favorable"
+	},
+			{
+		"id" : 41,
+		"author" : "Seneca",
+		"photo" : "seneca",
+		"phrase" : "Begin at once to live, and count each separate day as a separate life"
 	}
 ]
