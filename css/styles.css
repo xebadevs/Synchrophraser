@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    --orange: #CCB364;
+    --light-orange: #dfa241;
+    --light-grey: rgba(255, 255, 255, 0.7);
+}
+
 body {
     font-family: 'Roboto mono', monospace;
     overflow: hidden;
@@ -39,12 +45,12 @@ body {
     color: #E6AC44;
     font-size: 3.5em;
     font-family: 'Ephesis', cursive;
-    text-shadow: 2px 5px 5px #CCB364;
+    text-shadow: 2px 5px 5px var(--orange);
     margin-left: 1rem;
 }
 
 .nav-favs {
-    color: #CCB364;
+    color: var(--orange);
     font-size: 0.9rem;
     text-decoration: none;
     text-align: right;
@@ -52,7 +58,7 @@ body {
 }
 
 .nav-favs:hover {
-    color: #dfa241;
+    color: var(--light-orange);
 }
 
 nav {
@@ -94,7 +100,7 @@ nav img {
 }
 
 @keyframes flicker {
-    0% {box-shadow: 0px 0px -5px #CCB364, 0px 0px -5px #CCB364;}
+    0% {box-shadow: 0px 0px -5px var(--orange), 0px 0px -5px var(--orange);}
     50% {box-shadow: 10px 0px 15px rgba(255, 255, 0, 0.6), -10px 0px 15px rgba(255, 255, 0, 0.6)}
 }
 
@@ -114,7 +120,7 @@ main div p {
 .cursor {
     display: inline-block;
     width: 3px;
-    background-color: #ccc;
+    background-color: var(--light-grey);
     margin-left: -0.5rem;
     animation: blink 1s infinite;
 }
@@ -192,7 +198,7 @@ button {
 }
 
 button:hover {
-    background: #dfa241;
+    background: var(--light-orange);
     transition: 1s;
 }
 
@@ -243,7 +249,7 @@ button:hover {
 }
 
 @keyframes firelight {
-    0% {box-shadow: 0px 0px -5px #CCB364, 0px 0px -5px #CCB364;}
+    0% {box-shadow: 0px 0px -5px var(--orange), 0px 0px -5px var(--orange);}
     50% {box-shadow: 5px 0px 15px rgba(255, 255, 0, 0.6), -5px 0px 15px rgba(255, 255, 0, 0.6)}
 }
 
@@ -353,13 +359,12 @@ footer p {
     line-height: 5rem;
     border-radius: 10px;
     background-color: rgba(252, 140, 140, 0.15);
-    color: rgba(255, 255, 255, 0.7);
     box-shadow: 0 1px 15px rgba(0, 0, 0, 0.5);
 }
 
 .resp-question p {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--light-grey);
 }
 
 .button-cont {
@@ -542,7 +547,7 @@ border: 1px solid black;
     text-align: center;
     background-color: rgba(231, 159, 52, 0.2);
     line-height: 3rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--light-grey);
     margin: 10px 0px;
 }
 
