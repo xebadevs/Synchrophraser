@@ -17,7 +17,7 @@ On the left, the initial model. On the right, its implementation with the referr
 
 ![Double monitors](https://user-images.githubusercontent.com/91569646/140669692-52831968-cfb6-457f-b9e3-647b52d8d4c9.jpg)
 
-Here the same but with the response section.
+Here the same but with the response section: a modal with a blur effect background.
 
 ![Double monitor (Red)](https://user-images.githubusercontent.com/91569646/140669560-2e7a6233-3231-49c5-a8e6-74f551d964db.jpg)
 
