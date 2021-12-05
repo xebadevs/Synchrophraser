@@ -31,8 +31,12 @@ And finally, for a more enjoyable experience, I also added some beautiful and ca
 I recognize that it may not have a high level of contrast, but I have preferred to emphasize a pleasant design experience in this case.
 
 
+## Try it on GitHub Pages
 
-## Local tests
+https://xebadevs.github.io/Synchrophraser/#
+
+
+## Local Use
 
 Just clone the repository or download it to your hard drive and run `index.html`.
 
