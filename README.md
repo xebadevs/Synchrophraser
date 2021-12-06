@@ -45,4 +45,4 @@ Just clone the repository or download it to your hard drive and run `index.html`
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under Creative Commons Legal Code. See `LICENSE.txt` for more information.
