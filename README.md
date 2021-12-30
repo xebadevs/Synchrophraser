@@ -41,3 +41,8 @@ https://xebadevs.github.io/Synchrophraser/#
 Just clone the repository or download it to your hard drive and run `index.html`.
 
 **I hope you like the result!**
+
+
+## License
+
+Distributed under Creative Commons Legal Code. See `LICENSE.txt` for more information.
