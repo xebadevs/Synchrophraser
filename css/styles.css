@@ -485,6 +485,7 @@ border: 1px solid black;
     height: 1.5rem;
     margin: 18px 8px 0 0;
     font-weight: bold;
+    color: black;
 }
 
 
@@ -734,7 +735,7 @@ border: 1px solid black;
         height: 60px;
     }
     .cont-favs h1 {
-        font-size: 16px;
+        font-size: 15px;
     }
     .resp-question p {
         font-size: 0.5rem;
