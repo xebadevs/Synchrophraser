@@ -592,6 +592,10 @@ border: 1px solid black;
     input[type="text"]{
         width: 90%;
     }
+    .resp-content {
+        padding: 1em;
+        font-size: 4vh;
+    }
 }
 @media screen and (max-width: 576px) {
     input[type="text"]{
@@ -745,10 +749,10 @@ border: 1px solid black;
 /* iPad screen */
 @media screen and (max-width: 768px) and (height: 1024px){
     .resp-content-container {
-        width: 85%;
+        width: 95%;
     }
     .resp-content {
-        padding: 0 1.5rem;
+        padding: 0 .5rem;
     }
 }
 
