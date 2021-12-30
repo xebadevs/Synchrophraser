@@ -314,14 +314,20 @@ footer {
     color: transparent;
     border: transparent;
     background: transparent;
-    transition-property: all;
+    animation: footer-move 5s infinite;
+    transition-duration: 1s;
 }
 
 footer:hover {
     background-color: rgba(0, 0, 0, 0.5);
     border-top: 1px solid rgba(204, 179, 100, 0.15);
     color: rgba(204, 179, 100, 0.3);
-    transition-duration: 1s;
+    animation-duration: 3s;
+}
+
+@keyframes footer-move {
+    from {bottom: 0px;}
+    to {top: 200px;}
 }
 
 footer p {
