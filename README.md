@@ -1,10 +1,22 @@
 # Synchrophraser &#128218;
 
+## Try it on GitHub Pages
+
+> https://xebadevs.github.io/Synchrophraser
+
+<br>
+
+
+
+# About Synchrophraser &#128218;
+
 ## The basics
 
 The *HTML-CSS-JS* triade is a non negociable step in the learning path of every web developer. The foundational stone, you could say. And because of it, this first project implements them in the purest way it's possible, *without* any framework or library.
  
 I realized a **mockup** that provides the general structure and style of the website, but in the process I start to do some enhancements (color adjustments, background music, softer transitions), searching for an armonic behaviour between the topic and their functionality.
+
+<br>
 
 
 
@@ -30,10 +42,8 @@ And finally, for a more enjoyable experience, I also added some beautiful and ca
 
 I recognize that it may not have a high level of contrast, but I have preferred to emphasize a pleasant design experience in this case.
 
+<br>
 
-## Try it on GitHub Pages
-
-https://xebadevs.github.io/Synchrophraser/#
 
 
 ## Local Use
@@ -41,6 +51,9 @@ https://xebadevs.github.io/Synchrophraser/#
 Just clone the repository or download it to your hard drive and run `index.html`.
 
 **I hope you like the result!**
+
+<br>
+
 
 
 ## License
