@@ -318,11 +318,21 @@ footer {
     transition-duration: 1s;
 }
 
+.xebadevs {
+    display: none;
+}
+
 footer:hover {
     background-color: rgba(0, 0, 0, 0.5);
     border-top: 1px solid rgba(204, 179, 100, 0.15);
     color: rgba(204, 179, 100, 0.3);
     animation-duration: 3s;
+}
+
+footer:hover .xebadevs {
+    display: block;
+    color: rgba(204, 179, 100, 0.3);
+    text-decoration: none;
 }
 
 @keyframes footer-move {
