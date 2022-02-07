@@ -320,6 +320,8 @@ footer {
 
 .xebadevs {
     display: none;
+    animation: footer-move 5s infinite;
+    transition-duration: 1s;
 }
 
 footer:hover {
@@ -333,6 +335,8 @@ footer:hover .xebadevs {
     display: block;
     color: rgba(204, 179, 100, 0.3);
     text-decoration: none;
+    animation: footer-move 5s infinite;
+    transition-duration: 1s;
 }
 
 @keyframes footer-move {
